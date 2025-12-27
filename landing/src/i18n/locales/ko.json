@@ -233,11 +233,6 @@
         "anyon": "즉시 대화로 수정"
       },
       {
-        "feature": "코드 품질",
-        "traditional": "팀 역량에 따라 다름",
-        "anyon": "산업 표준 준수 보장"
-      },
-      {
         "feature": "배포",
         "traditional": "복잡한 DevOps 설정",
         "anyon": "원클릭 배포"

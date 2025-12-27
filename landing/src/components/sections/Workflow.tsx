@@ -1,6 +1,6 @@
 import { useTranslation } from 'react-i18next';
 import { AnimatedSection } from '../shared/AnimatedSection';
-import DotGrid from '../DotGrid';
+import LiquidEther from '../LiquidEther';
 
 interface Step {
   step: number;
@@ -89,17 +89,14 @@ export function Workflow() {
 
   return (
     <section id="workflow" className="relative py-16 sm:py-20 px-4 sm:px-6 bg-background overflow-hidden">
-      {/* DotGrid Background */}
+      {/* LiquidEther Background */}
       <div className="absolute inset-0 opacity-15">
-        <DotGrid
-          dotSize={4}
-          gap={35}
-          baseColor="#FFB380"
-          activeColor="#FF8C42"
-          proximity={200}
-          speedTrigger={80}
-          shockRadius={300}
-          shockStrength={10}
+        <LiquidEther
+          colors={['#FF8C42', '#FFB380', '#FFCC99']}
+          autoDemo={true}
+          autoSpeed={0.5}
+          autoIntensity={2.2}
+          resolution={0.5}
         />
       </div>
       <div className="relative z-10 max-w-7xl mx-auto">

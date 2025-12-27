@@ -42,8 +42,8 @@ export function FAQ() {
   const faqs = t('faq.items', { returnObjects: true }) as FAQItem[];
 
   return (
-    <section id="faq" className="py-20 sm:py-24 md:py-32 px-4 sm:px-6 bg-background">
-      <div className="max-w-4xl mx-auto">
+    <section id="faq" className="relative py-20 sm:py-24 md:py-32 px-4 sm:px-6 bg-background overflow-hidden">
+      <div className="relative z-10 max-w-4xl mx-auto">
         <AnimatedSection>
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-center mb-3 sm:mb-4">
             {t('faq.title')}

@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { AnimatedSection } from '../shared/AnimatedSection';
+import LiquidEther from '../LiquidEther';
 
 interface UseCase {
   title: string;
@@ -124,8 +125,18 @@ export function UseCases() {
   const useCases = t('useCases.items', { returnObjects: true }) as UseCase[];
 
   return (
-    <section id="use-cases" className="py-20 sm:py-24 md:py-32 px-4 sm:px-6 bg-background">
-      <div className="max-w-7xl mx-auto">
+    <section id="use-cases" className="relative py-20 sm:py-24 md:py-32 px-4 sm:px-6 bg-background overflow-hidden">
+      {/* LiquidEther Background */}
+      <div className="absolute inset-0 opacity-15">
+        <LiquidEther
+          colors={['#FF8C42', '#FFB380', '#FFCC99']}
+          autoDemo={true}
+          autoSpeed={0.5}
+          autoIntensity={2.2}
+          resolution={0.5}
+        />
+      </div>
+      <div className="relative z-10 max-w-7xl mx-auto">
         <AnimatedSection>
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-center mb-3 sm:mb-4">
             {t('useCases.title')}

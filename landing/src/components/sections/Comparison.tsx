@@ -12,8 +12,8 @@ export function Comparison() {
   const comparisons = t('comparison.items', { returnObjects: true }) as ComparisonRow[];
 
   return (
-    <section id="comparison" className="py-12 sm:py-16 px-4 sm:px-6 bg-surface">
-      <div className="max-w-6xl mx-auto">
+    <section id="comparison" className="relative py-12 sm:py-16 px-4 sm:px-6 bg-surface overflow-hidden">
+      <div className="relative z-10 max-w-6xl mx-auto">
         <AnimatedSection>
           <h2
             className="text-3xl sm:text-4xl md:text-5xl font-bold text-center mb-3 sm:mb-4"
@@ -24,37 +24,18 @@ export function Comparison() {
           </p>
         </AnimatedSection>
 
-        {/* Mobile Card Layout */}
-        <div className="md:hidden space-y-4">
-          {comparisons.map((row, index) => (
-            <div key={index} className="bg-[#1a1a1a] rounded-lg p-4 border border-[rgba(247,247,244,0.1)]">
-              <h3 className="text-sm font-bold mb-3" style={{ color: '#f7f7f4' }}>{row.feature}</h3>
-              <div className="space-y-3">
-                <div>
-                  <p className="text-xs text-muted-foreground mb-1">{t('comparison.tableHeaders.traditional')}</p>
-                  <p className="text-sm" style={{ color: 'rgba(247, 247, 244, 0.8)' }}>{row.traditional}</p>
-                </div>
-                <div>
-                  <p className="text-xs text-muted-foreground mb-1">{t('comparison.tableHeaders.anyon')}</p>
-                  <p className="text-sm font-bold" style={{ color: '#d97757' }}>{row.anyon}</p>
-                </div>
-              </div>
-            </div>
-          ))}
-        </div>
-
-        {/* Desktop Table Layout */}
-        <div className="hidden md:block overflow-x-auto">
-          <table className="w-full border-collapse table-fixed rounded-xl overflow-hidden shadow-lg" style={{ backgroundColor: '#1a1a1a' }}>
+        {/* Table Layout for all screen sizes */}
+        <div className="overflow-x-auto">
+          <table className="w-full border-collapse rounded-xl overflow-hidden shadow-lg" style={{ backgroundColor: '#1a1a1a' }}>
             <thead>
               <tr className="border-b-2" style={{ borderColor: 'rgba(247, 247, 244, 0.1)', backgroundColor: '#0a0a0a' }}>
-                <th className="text-left py-3 px-4 md:py-5 md:px-6 text-sm md:text-base lg:text-lg font-bold w-1/4" style={{ color: '#f7f7f4' }}>
+                <th className="text-left py-2 px-2 sm:py-3 sm:px-4 md:py-5 md:px-6 text-xs sm:text-sm md:text-base lg:text-lg font-bold" style={{ color: '#f7f7f4' }}>
                   {t('comparison.tableHeaders.feature')}
                 </th>
-                <th className="text-center py-3 px-4 md:py-5 md:px-6 text-sm md:text-base lg:text-lg font-bold w-[37.5%] border-l" style={{ color: 'rgba(247, 247, 244, 0.8)', borderColor: 'rgba(247, 247, 244, 0.3)' }}>
+                <th className="text-center py-2 px-2 sm:py-3 sm:px-4 md:py-5 md:px-6 text-xs sm:text-sm md:text-base lg:text-lg font-bold border-l" style={{ color: 'rgba(247, 247, 244, 0.8)', borderColor: 'rgba(247, 247, 244, 0.3)' }}>
                   {t('comparison.tableHeaders.traditional')}
                 </th>
-                <th className="text-center py-3 px-4 md:py-5 md:px-6 text-sm md:text-base lg:text-lg font-bold w-[37.5%] border-l" style={{ color: '#f7f7f4', borderColor: 'rgba(247, 247, 244, 0.3)' }}>
+                <th className="text-center py-2 px-2 sm:py-3 sm:px-4 md:py-5 md:px-6 text-xs sm:text-sm md:text-base lg:text-lg font-bold border-l" style={{ color: '#f7f7f4', borderColor: 'rgba(247, 247, 244, 0.3)' }}>
                   <span className="brand-gradient">{t('comparison.tableHeaders.anyon')}</span>
                 </th>
               </tr>
@@ -62,9 +43,9 @@ export function Comparison() {
             <tbody style={{ backgroundColor: '#1a1a1a' }}>
               {comparisons.map((row, index) => (
                 <tr key={index} className="border-b hover:bg-background/30 transition-colors" style={{ borderColor: 'rgba(247, 247, 244, 0.1)' }}>
-                  <td className="py-3 px-4 md:py-5 md:px-6 font-bold text-sm md:text-base" style={{ color: '#f7f7f4' }}>{row.feature}</td>
-                  <td className="py-3 px-4 md:py-5 md:px-6 text-center text-sm md:text-base border-l" style={{ color: 'rgba(247, 247, 244, 0.8)', borderColor: 'rgba(247, 247, 244, 0.3)' }}>{row.traditional}</td>
-                  <td className="py-3 px-4 md:py-5 md:px-6 text-center border-l text-sm md:text-base" style={{ borderColor: 'rgba(247, 247, 244, 0.3)' }}>
+                  <td className="py-2 px-2 sm:py-3 sm:px-4 md:py-5 md:px-6 font-bold text-xs sm:text-sm md:text-base" style={{ color: '#f7f7f4' }}>{row.feature}</td>
+                  <td className="py-2 px-2 sm:py-3 sm:px-4 md:py-5 md:px-6 text-center text-xs sm:text-sm md:text-base border-l" style={{ color: 'rgba(247, 247, 244, 0.8)', borderColor: 'rgba(247, 247, 244, 0.3)' }}>{row.traditional}</td>
+                  <td className="py-2 px-2 sm:py-3 sm:px-4 md:py-5 md:px-6 text-center border-l text-xs sm:text-sm md:text-base" style={{ borderColor: 'rgba(247, 247, 244, 0.3)' }}>
                     <span className="font-bold" style={{ color: '#d97757' }}>{row.anyon}</span>
                   </td>
                 </tr>

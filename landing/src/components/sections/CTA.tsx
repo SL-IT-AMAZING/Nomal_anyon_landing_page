@@ -1,11 +1,22 @@
 import { useTranslation } from 'react-i18next';
 import { AnimatedSection } from '../shared/AnimatedSection';
+import LiquidEther from '../LiquidEther';
 
 export function CTA() {
   const { t } = useTranslation();
 
   return (
     <section className="py-20 sm:py-24 md:py-32 px-4 sm:px-6 bg-gradient-to-br from-brand-primary/20 via-brand-secondary/10 to-background relative overflow-hidden">
+      {/* LiquidEther Background */}
+      <div className="absolute inset-0 opacity-15">
+        <LiquidEther
+          colors={['#FF8C42', '#FFB380', '#FFCC99']}
+          autoDemo={true}
+          autoSpeed={0.5}
+          autoIntensity={2.2}
+          resolution={0.5}
+        />
+      </div>
       {/* Background Decoration */}
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,_var(--color-brand-primary)_0%,_transparent_70%)] opacity-10" />
 
