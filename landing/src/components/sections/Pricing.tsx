@@ -1,5 +1,6 @@
 import { useTranslation } from 'react-i18next';
 import { AnimatedSection } from '../shared/AnimatedSection';
+import DotGrid from '../DotGrid';
 
 interface PricingTier {
   name: string;
@@ -104,8 +105,21 @@ export function Pricing() {
   ];
 
   return (
-    <section id="pricing" className="py-20 sm:py-24 md:py-32 px-4 sm:px-6 bg-background">
-      <div className="max-w-7xl mx-auto">
+    <section id="pricing" className="relative py-20 sm:py-24 md:py-32 px-4 sm:px-6 bg-background overflow-hidden">
+      {/* DotGrid Background */}
+      <div className="absolute inset-0 opacity-15">
+        <DotGrid
+          dotSize={4}
+          gap={35}
+          baseColor="#FFB380"
+          activeColor="#FF8C42"
+          proximity={200}
+          speedTrigger={80}
+          shockRadius={300}
+          shockStrength={10}
+        />
+      </div>
+      <div className="relative z-10 max-w-7xl mx-auto">
         <AnimatedSection>
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-center mb-3 sm:mb-4">
             {t('pricing.title')}
