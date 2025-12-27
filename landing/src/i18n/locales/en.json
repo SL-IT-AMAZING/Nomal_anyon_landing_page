@@ -1,0 +1,406 @@
+{
+  "nav": {
+    "features": "Features",
+    "comparison": "Comparison",
+    "workflow": "How it Works",
+    "pricing": "Pricing",
+    "faq": "FAQ",
+    "cta": "Get Started"
+  },
+  "hero": {
+    "title1": "Even if you're new to coding",
+    "title2": "Build anything in 3 days",
+    "description": "<strong>6 design documents auto-generated</strong> - PRD, UX, UI, TRD, Architecture, ERD<br />Systematic development process through conversation alone",
+    "ctaPrimary": "Start for Free →",
+    "ctaSecondary": "Watch Demo",
+    "demoAlert": "Demo is coming soon. Stay tuned!"
+  },
+  "features": {
+    "title": "AI-Generated",
+    "subtitle": "6-Step Development Documentation",
+    "items": {
+      "prd": {
+        "title": "1. PRD Creation",
+        "description": "Auto-generate professional-grade Product Requirements Documents through AI conversation.",
+        "highlights": ["Define Product Goals", "Analyze Feature Requirements", "Set Priorities"]
+      },
+      "ux": {
+        "title": "2. UX Design",
+        "description": "AI automatically generates user experience design and wireframes.",
+        "highlights": ["User Flows", "Screen Layout", "Interaction Design"]
+      },
+      "ui": {
+        "title": "3. UI Design",
+        "description": "Systematically organize design systems and component guides.",
+        "highlights": ["Color System", "Typography", "Component Library"]
+      },
+      "trd": {
+        "title": "4. TRD Creation",
+        "description": "Automatically generate Technical Requirements Documents.",
+        "highlights": ["Tech Stack Selection", "System Requirements", "API Specifications"]
+      },
+      "architecture": {
+        "title": "5. Architecture",
+        "description": "Design system architecture and generate diagrams.",
+        "highlights": ["System Structure", "Component Design", "Deployment Architecture"]
+      },
+      "erd": {
+        "title": "6. ERD Creation",
+        "description": "Auto-generate database schemas and ERDs.",
+        "highlights": ["Table Design", "Relationship Definition", "Index Optimization"]
+      }
+    }
+  },
+  "workflow": {
+    "title": "How Does It Work?",
+    "subtitle": "<strong>Easy for non-developers</strong>, professional results",
+    "description": "Complete product development in 5 steps",
+    "steps": {
+      "step1": {
+        "title": "Start with Conversation",
+        "description": "Progress through AI chat",
+        "easyPoint": "Just chat as comfortably as messaging"
+      },
+      "step2": {
+        "title": "Auto Design",
+        "description": "Create 6 design documents",
+        "easyPoint": "Documents complete automatically through conversation"
+      },
+      "step3": {
+        "title": "AI Development",
+        "description": "Automated coding and testing",
+        "easyPoint": "No coding knowledge required"
+      },
+      "step4": {
+        "title": "Real-time Preview",
+        "description": "Check instantly in preview",
+        "easyPoint": "Changes reflected immediately through conversation"
+      },
+      "step5": {
+        "title": "Deploy",
+        "description": "Deploy finished product instantly",
+        "easyPoint": "Launch worldwide with one click"
+      }
+    },
+    "cta": {
+      "title": "Does it look complicated? <span>Not at all.</span>",
+      "stats": "Average time to first MVP: <strong>3 days</strong> | Satisfaction: <strong>98%</strong>",
+      "button": "Try it in 3 minutes →"
+    },
+    "easyPointLabel": "Easy Point"
+  },
+  "pricing": {
+    "title": "Simple and Transparent Pricing",
+    "subtitle": "Sign up now for <strong>completely free</strong> early access",
+    "description": "Special discounts for early access users even after official launch",
+    "period": "/ month",
+    "tiers": {
+      "free": {
+        "name": "Free (Early Access)",
+        "price": "$0",
+        "description": "All features free during early access period",
+        "badge": "Free Now!",
+        "features": [
+          "6 auto-generated documents (PRD, UX, UI, TRD, Architecture, ERD)",
+          "Real code generation (React + TypeScript)",
+          "Unlimited projects",
+          "One-click deployment",
+          "Community support",
+          "Special discount after official launch"
+        ],
+        "cta": "Start Free Now"
+      },
+      "basic": {
+        "name": "Basic",
+        "price": "$20",
+        "originalPrice": "After official launch",
+        "description": "Perfect for individual developers and small projects",
+        "features": [
+          "All Free plan features",
+          "Premium template library",
+          "Advanced customization options",
+          "Priority support (48hr response)",
+          "Project collaboration (up to 3 members)",
+          "20 projects per month"
+        ],
+        "cta": "Get Launch Notification"
+      },
+      "pro": {
+        "name": "Pro",
+        "price": "$100",
+        "originalPrice": "After official launch",
+        "description": "Professional plan for teams and agencies",
+        "badge": "Recommended",
+        "features": [
+          "All Basic plan features",
+          "Unlimited projects",
+          "Unlimited team members",
+          "Priority support (24hr response)",
+          "1:1 onboarding consultation",
+          "White-labeling options",
+          "Custom integrations and API",
+          "Dedicated account manager"
+        ],
+        "cta": "Get Launch Notification"
+      }
+    },
+    "enterprise": {
+      "title": "Need an Enterprise Plan?",
+      "description": "For large teams, custom requirements, on-premise deployment, and more, please contact us separately.",
+      "cta": "Contact Sales"
+    }
+  },
+  "faq": {
+    "title": "Frequently Asked Questions",
+    "subtitle": "Get answers to common questions about ANYON",
+    "items": [
+      {
+        "question": "Can I really use this without knowing how to code?",
+        "answer": "Yes! ANYON is designed for non-developers. Through conversation with AI alone, it auto-generates all documents including PRD, UX/UI design, architecture, and ERD, then implements them in actual code. You can create professional-grade products with zero development knowledge."
+      },
+      {
+        "question": "What types of apps can I build?",
+        "answer": "You can build various products including web applications, mobile apps, SaaS products, e-commerce platforms, admin dashboards, and more. Built with modern stack (React, TypeScript, Node.js) and ready for production deployment."
+      },
+      {
+        "question": "How much does it cost?",
+        "answer": "Currently completely free during early access period. After official launch, plans will be Basic ($20/month) and Pro ($100/month). Sign up now to receive special discount benefits."
+      },
+      {
+        "question": "What's the quality of generated code?",
+        "answer": "Generates high-quality code following industry standards. Ensures type safety with TypeScript, uses modern React patterns, and features architecture considering security and performance. Generated code is fully customizable."
+      },
+      {
+        "question": "How does deployment work?",
+        "answer": "Supports one-click deployment to major platforms like Vercel, Netlify, and AWS. Generated projects have standard structure, allowing free deployment to any hosting service of your choice."
+      },
+      {
+        "question": "Can I modify after development?",
+        "answer": "Absolutely! You have 100% ownership of generated code and can modify it yourself or hire developers for customization anytime. You can also continue developing additional features through AI."
+      },
+      {
+        "question": "How do I get customer support?",
+        "answer": "We provide Discord community, email support, and detailed documentation. Pro plan users receive priority support and 1:1 consultation."
+      },
+      {
+        "question": "How is data security handled?",
+        "answer": "All data is encrypted and stored securely. Generated code and projects are completely user-owned and can be exported anytime. We comply with GDPR and major security standards."
+      }
+    ]
+  },
+  "cta": {
+    "title": "Get Started Now",
+    "description": "AI development platform for non-developers. Start free and turn your ideas into products.",
+    "button": "Start for Free"
+  },
+  "comparison": {
+    "title": "Why <span>ANYON</span>?",
+    "subtitle": "Compare with traditional outsourced development",
+    "tableHeaders": {
+      "feature": "Comparison",
+      "traditional": "Traditional Outsourcing",
+      "anyon": "ANYON"
+    },
+    "items": [
+      {
+        "feature": "Development Time",
+        "traditional": "3-6 months",
+        "anyon": "3 days"
+      },
+      {
+        "feature": "Development Cost",
+        "traditional": "$50,000 ~ $200,000",
+        "anyon": "$20/month (Currently Free)"
+      },
+      {
+        "feature": "Required Team",
+        "traditional": "PM, Designer, Frontend, Backend, DevOps",
+        "anyon": "Just You"
+      },
+      {
+        "feature": "Technical Knowledge",
+        "traditional": "Professional dev team required",
+        "anyon": "No coding knowledge needed"
+      },
+      {
+        "feature": "Documentation",
+        "traditional": "Manual writing (takes weeks)",
+        "anyon": "Auto-generate PRD, UX, UI, TRD, Architecture, ERD"
+      },
+      {
+        "feature": "Modifications & Iterations",
+        "traditional": "Additional cost and time",
+        "anyon": "Instant changes through conversation"
+      },
+      {
+        "feature": "Code Quality",
+        "traditional": "Depends on team capability",
+        "anyon": "Industry standards guaranteed"
+      },
+      {
+        "feature": "Deployment",
+        "traditional": "Complex DevOps setup",
+        "anyon": "One-click deployment"
+      }
+    ],
+    "cta": {
+      "title": "<span>99% cost savings</span>, 100x faster development",
+      "description": "Before spending tens of thousands on outsourcing, try ANYON first.",
+      "button": "Get Started Now →"
+    }
+  },
+  "useCases": {
+    "title": "Who Is This For?",
+    "subtitle": "ANYON is perfect for these professionals",
+    "items": [
+      {
+        "title": "Startup Founders",
+        "description": "Early-stage startups needing quick MVP validation",
+        "problem": "High outsourcing costs, long development time, communication difficulties",
+        "solution": "Launch MVP in 3 days with ANYON and test market response",
+        "results": [
+          "99% cost reduction ($50K+ → $20/month)",
+          "MVP launch time 3-6 months → 3 days",
+          "Instant prototype for investor meetings"
+        ]
+      },
+      {
+        "title": "Freelancers & Solopreneurs",
+        "description": "Handling diverse client projects solo",
+        "problem": "Outsourcing costs reduce project margins",
+        "solution": "Develop directly with ANYON to maximize margins",
+        "results": [
+          "Offer clients lower prices",
+          "Project margins increase 200-300%",
+          "Complete independence from developers"
+        ]
+      },
+      {
+        "title": "SMBs & Small Businesses",
+        "description": "Need internal automation and custom solutions",
+        "problem": "Expensive ERP/CRM subscriptions, off-the-shelf solutions don't fit",
+        "solution": "Build custom management systems with ANYON",
+        "results": [
+          "Save tens of thousands on annual SaaS fees",
+          "Perfect fit for your business",
+          "Build systems without hiring IT staff"
+        ]
+      },
+      {
+        "title": "E-commerce & Online Business",
+        "description": "Online store and marketplace operators",
+        "problem": "Platform fees burden, no customization possible",
+        "solution": "Build independent shopping platform with ANYON",
+        "results": [
+          "Zero platform fees (save 5-10% of revenue)",
+          "Full customization freedom",
+          "100% customer data ownership"
+        ]
+      },
+      {
+        "title": "Digital Agencies",
+        "description": "Handling web/app development projects for clients",
+        "problem": "Outsourcing difficulties, delays, reduced margins",
+        "solution": "Build in-house development capacity with ANYON",
+        "results": [
+          "Project margins increase 300-500%",
+          "Faster delivery improves client satisfaction",
+          "Expand business with development services"
+        ]
+      },
+      {
+        "title": "Education & Non-Profit",
+        "description": "Schools, educational institutions, non-profit organizations",
+        "problem": "Limited budgets, no IT expertise",
+        "solution": "Build needed systems with ANYON at low/no cost",
+        "results": [
+          "Custom systems on limited budgets",
+          "Build student management, attendance, grading systems",
+          "Even cheaper with non-profit discounts"
+        ]
+      }
+    ],
+    "cta": {
+      "description": "Not sure if it's right for you? Start for free and see.",
+      "button": "Start for Free →"
+    },
+    "labels": {
+      "problem": "Challenge",
+      "solution": "ANYON Solution",
+      "results": "Expected Results"
+    }
+  },
+  "testimonials": {
+    "title": "User Stories",
+    "subtitle": "Hear from real users' experiences",
+    "items": [
+      {
+        "quote": "Thanks to ANYON, I deployed my MVP in 3 days. At 1/100th the cost of outsourcing quotes!",
+        "author": "Kim Dohyun",
+        "role": "Startup Founder",
+        "avatar": "👨‍💼",
+        "rating": 5
+      },
+      {
+        "quote": "I don't know coding at all, but I built a working app. Amazing!",
+        "author": "Lee Seoyeon",
+        "role": "Product Manager",
+        "avatar": "👩‍💻",
+        "rating": 5
+      },
+      {
+        "quote": "Proper design from the start makes maintenance so much easier.",
+        "author": "Park Junhyeok",
+        "role": "Solo Developer",
+        "avatar": "👨‍💻",
+        "rating": 5
+      },
+      {
+        "quote": "AI development speed is incredible - one week was enough.",
+        "author": "Choi Jieun",
+        "role": "E-commerce Owner",
+        "avatar": "👩‍🔧",
+        "rating": 5
+      },
+      {
+        "quote": "Auto-generated tech specs made communication with developers much easier.",
+        "author": "Jung Minwoo",
+        "role": "Project Manager",
+        "avatar": "👨‍🎓",
+        "rating": 5
+      },
+      {
+        "quote": "Preview feature let me demo to clients quickly.",
+        "author": "Kang Haneul",
+        "role": "Marketing Lead",
+        "avatar": "👩‍🎨",
+        "rating": 5
+      }
+    ]
+  },
+  "footer": {
+    "brandDescription": "AI-powered development platform for non-developers. Build professional products through conversation.",
+    "brandTagline": "Anyone can launch an MVP in 3 days with the latest AI technology.",
+    "sections": {
+      "product": {
+        "title": "Product",
+        "links": {
+          "features": "Features",
+          "comparison": "Comparison",
+          "workflow": "How it Works",
+          "pricing": "Pricing"
+        }
+      },
+      "resources": {
+        "title": "Resources",
+        "links": {
+          "faq": "FAQ",
+          "docs": "Documentation",
+          "blog": "Blog",
+          "support": "Support"
+        }
+      }
+    },
+    "copyright": "© 2025 ANYON. All rights reserved."
+  }
+}

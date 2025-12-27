@@ -1,3 +1,4 @@
+import { useTranslation } from 'react-i18next';
 import { AnimatedSection } from '../shared/AnimatedSection';
 import { useEffect, useRef, useState } from 'react';
 
@@ -8,63 +9,24 @@ interface Feature {
   highlights: string[];
 }
 
-const features: Feature[] = [
-  {
-    title: '1. PRD 작성',
-    description: 'AI와 대화만으로 전문가급 요구사항 문서(PRD)를 자동 생성합니다.',
-    imageSrc: '/icons/prd-icon.png',
-    highlights: ['제품 목표 정의', '기능 요구사항 분석', '우선순위 설정'],
-  },
-  {
-    title: '2. UX 디자인',
-    description: '사용자 경험 설계와 와이어프레임을 AI가 자동 생성합니다.',
-    imageSrc: '/icons/uiux-icon.png',
-    highlights: ['사용자 플로우', '화면 구성', '인터랙션 설계'],
-  },
-  {
-    title: '3. UI 디자인',
-    description: '디자인 시스템과 컴포넌트 가이드를 체계적으로 구성합니다.',
-    imageSrc: '/icons/design-icon.png',
-    highlights: ['컬러 시스템', '타이포그래피', '컴포넌트 라이브러리'],
-  },
-  {
-    title: '4. TRD 작성',
-    description: '기술 요구사항 문서(TRD)를 자동으로 생성합니다.',
-    imageSrc: '/icons/trd-icon.png',
-    highlights: ['기술 스택 선정', '시스템 요구사항', 'API 명세'],
-  },
-  {
-    title: '5. 아키텍처',
-    description: '시스템 아키텍처를 설계하고 다이어그램을 생성합니다.',
-    imageSrc: '/icons/architecture-icon.png',
-    highlights: ['시스템 구조도', '컴포넌트 설계', '배포 아키텍처'],
-  },
-  {
-    title: '6. ERD 작성',
-    description: '데이터베이스 스키마와 ERD를 자동 생성합니다.',
-    imageSrc: '/icons/erd-icon.png',
-    highlights: ['테이블 설계', '관계 정의', '인덱스 최적화'],
-  },
-];
-
 function FeatureCard({ title, description, imageSrc, highlights, index }: Feature & { index: number }) {
   return (
     <AnimatedSection delay={index * 100}>
-      <div className="flex-shrink-0 w-80 bg-surface rounded-2xl border border-border p-6 hover:border-brand-primary/50 transition-all">
+      <div className="flex-shrink-0 w-72 sm:w-80 bg-surface rounded-2xl border border-border p-4 sm:p-6 hover:border-brand-primary/50 transition-all">
         {/* Image */}
-        <div className="mb-4 flex items-center justify-center">
+        <div className="mb-3 sm:mb-4 flex items-center justify-center">
           <img
             src={imageSrc}
             alt={title}
-            className="w-32 h-32 object-contain brightness-0 invert"
+            className="w-20 h-20 sm:w-24 sm:h-24 md:w-32 md:h-32 object-contain brightness-0 invert"
           />
         </div>
 
         {/* Title */}
-        <h3 className="text-xl font-bold text-foreground mb-3">{title}</h3>
+        <h3 className="text-lg sm:text-xl font-bold text-foreground mb-2 sm:mb-3">{title}</h3>
 
         {/* Description */}
-        <p className="text-sm text-muted leading-relaxed mb-4">{description}</p>
+        <p className="text-xs sm:text-sm text-muted leading-relaxed mb-3 sm:mb-4">{description}</p>
 
         {/* Highlights */}
         <ul className="space-y-2">
@@ -87,11 +49,51 @@ function FeatureCard({ title, description, imageSrc, highlights, index }: Featur
 }
 
 export function FeatureShowcase() {
+  const { t } = useTranslation();
   const scrollContainerRef = useRef<HTMLDivElement>(null);
   const [isPaused, setIsPaused] = useState(false);
   const [isDragging, setIsDragging] = useState(false);
   const [startX, setStartX] = useState(0);
   const [scrollLeft, setScrollLeft] = useState(0);
+
+  const features: Feature[] = [
+    {
+      title: t('features.items.prd.title'),
+      description: t('features.items.prd.description'),
+      imageSrc: '/icons/prd-icon.png',
+      highlights: t('features.items.prd.highlights', { returnObjects: true }) as string[],
+    },
+    {
+      title: t('features.items.ux.title'),
+      description: t('features.items.ux.description'),
+      imageSrc: '/icons/uiux-icon.png',
+      highlights: t('features.items.ux.highlights', { returnObjects: true }) as string[],
+    },
+    {
+      title: t('features.items.ui.title'),
+      description: t('features.items.ui.description'),
+      imageSrc: '/icons/design-icon.png',
+      highlights: t('features.items.ui.highlights', { returnObjects: true }) as string[],
+    },
+    {
+      title: t('features.items.trd.title'),
+      description: t('features.items.trd.description'),
+      imageSrc: '/icons/trd-icon.png',
+      highlights: t('features.items.trd.highlights', { returnObjects: true }) as string[],
+    },
+    {
+      title: t('features.items.architecture.title'),
+      description: t('features.items.architecture.description'),
+      imageSrc: '/icons/architecture-icon.png',
+      highlights: t('features.items.architecture.highlights', { returnObjects: true }) as string[],
+    },
+    {
+      title: t('features.items.erd.title'),
+      description: t('features.items.erd.description'),
+      imageSrc: '/icons/erd-icon.png',
+      highlights: t('features.items.erd.highlights', { returnObjects: true }) as string[],
+    },
+  ];
 
   useEffect(() => {
     const scrollContainer = scrollContainerRef.current;
@@ -153,14 +155,14 @@ export function FeatureShowcase() {
   };
 
   return (
-    <section id="features" className="py-32 px-6 bg-background overflow-hidden">
+    <section id="features" className="py-20 sm:py-24 md:py-32 px-4 sm:px-6 bg-background overflow-hidden">
       <div className="max-w-7xl mx-auto">
         <AnimatedSection>
-          <h2 className="text-4xl md:text-5xl font-bold text-center mb-4">
-            AI가 자동으로 생성하는
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-center mb-3 sm:mb-4">
+            {t('features.title')}
           </h2>
-          <h2 className="text-4xl md:text-5xl font-bold text-center mb-16">
-            <span className="brand-gradient">6단계 개발 문서</span>
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-center mb-12 sm:mb-16">
+            <span className="brand-gradient">{t('features.subtitle')}</span>
           </h2>
         </AnimatedSection>
 
