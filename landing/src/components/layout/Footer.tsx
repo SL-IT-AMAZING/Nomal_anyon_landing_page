@@ -7,7 +7,7 @@ export function Footer() {
           <div className="md:col-span-2">
             <div className="flex items-center gap-2 mb-3">
               <img src="/logos/logo-anyon.png" alt="ANYON" className="h-8 w-8 brightness-0 invert" />
-              <span className="text-2xl font-bold brand-gradient">ANYON</span>
+              <span className="text-2xl font-bold text-white">ANYON</span>
             </div>
             <p className="text-sm text-muted leading-relaxed mb-4">
               비개발자를 위한 AI 기반 개발 플랫폼. 대화만으로 만드는 전문가급 제품.

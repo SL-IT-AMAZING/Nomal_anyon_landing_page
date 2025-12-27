@@ -1,43 +1,23 @@
+# Dependencies
+node_modules/
+landing/node_modules/
+
+# Build outputs
+landing/dist/
+
 # Logs
-logs
 *.log
 npm-debug.log*
-yarn-debug.log*
-yarn-error.log*
-pnpm-debug.log*
-lerna-debug.log*
 
-node_modules
-dist
-dist-ssr
-*.local
-*.bun-build
-
-# Vite cache
-node_modules/.vite
-.parcel-cache
-
-# Tauri binaries (built executables)
-src-tauri/binaries/
-
-# Editor directories and files
-.vscode/*
-!.vscode/extensions.json
-.idea
-.DS_Store
-*.suo
-*.ntvs*
-*.njsproj
-*.sln
-*.sw?
-temp_lib/
-
-
-
-# Claude project-specific files
-
-# BMad Method artifacts
-.anyon/
-_bmad-output/
-
+# Environment
 .env
+.env.local
+.env.production
+
+# OS
+.DS_Store
+Thumbs.db
+
+# IDE
+.vscode/
+.idea/

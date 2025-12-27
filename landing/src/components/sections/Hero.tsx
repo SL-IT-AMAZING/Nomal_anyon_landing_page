@@ -10,17 +10,17 @@ export function Hero() {
             <img src="/logos/logo-anyon.png" alt="ANYON" className="h-32 w-32 brightness-0 invert" />
           </div>
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight">
-            <span className="brand-gradient">3일 만에 MVP 출시</span>
+            <span className="brand-gradient">코딩을 처음 시작해도</span>
             <br />
-            코딩 없이 가능합니다
+            <span className="brand-gradient">3일이면 무엇이든 완성</span>
           </h1>
         </AnimatedSection>
 
         <AnimatedSection delay={200}>
           <p className="text-xl md:text-2xl text-muted mt-8 max-w-3xl mx-auto leading-relaxed">
-            PRD부터 ERD까지 <strong className="text-foreground">6개 전문 문서 자동 생성</strong> + 실제 코드까지.
+            PRD, UX, UI, TRD, 아키텍처, ERD까지 <strong className="text-foreground">6개 설계 문서 자동 생성</strong>
             <br />
-            비개발자도 대화만으로 전문가급 제품을 만듭니다.
+            대화만으로 완성하는 체계적인 개발 프로세스
           </p>
         </AnimatedSection>
 

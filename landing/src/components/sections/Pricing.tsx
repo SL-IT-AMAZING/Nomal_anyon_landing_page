@@ -153,7 +153,7 @@ export function Pricing() {
               <p className="text-center text-muted mb-6">
                 대규모 팀, 커스텀 요구사항, 온프레미스 배포 등이 필요하시다면 별도로 문의주세요.
               </p>
-              <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <div className="flex justify-center">
                 <a
                   href="https://any-on.dev/"
                   target="_blank"
@@ -162,9 +162,6 @@ export function Pricing() {
                 >
                   영업팀 문의하기
                 </a>
-                <button className="px-8 py-3 bg-surface hover:bg-surface/80 text-foreground font-semibold rounded-lg border border-border hover:border-brand-primary/50 transition-all">
-                  Enterprise 자료 다운로드
-                </button>
               </div>
             </div>
           </div>

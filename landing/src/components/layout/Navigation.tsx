@@ -10,7 +10,7 @@ export function Navigation() {
               alt="ANYON"
               className="h-8 w-8 brightness-0 invert"
             />
-            <span className="text-3xl font-bold brand-gradient">ANYON</span>
+            <span className="text-3xl font-bold text-white">ANYON</span>
           </div>
 
           {/* Navigation Links */}

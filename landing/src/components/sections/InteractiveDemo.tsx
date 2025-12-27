@@ -1,4 +1,3 @@
-import { AnimatedSection } from '../shared/AnimatedSection';
 import { useState } from 'react';
 
 interface ChoiceCard {

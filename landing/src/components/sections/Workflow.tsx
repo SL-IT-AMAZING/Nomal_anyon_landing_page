@@ -5,7 +5,6 @@ interface Step {
   title: string;
   description: string;
   easyPoint: string;
-  qualityPoint: string;
   icon: string;
 }
 
@@ -15,7 +14,6 @@ const steps: Step[] = [
     title: '대화로 시작',
     description: 'AI와 채팅으로 진행',
     easyPoint: '카톡하듯 편하게 대화만 하면 됩니다',
-    qualityPoint: 'PRD, UX, UI, TRD, 아키텍처, ERD 자동 작성',
     icon: '',
   },
   {
@@ -23,7 +21,6 @@ const steps: Step[] = [
     title: '자동 설계',
     description: '6개의 설계문서 작성',
     easyPoint: '대화만 하면 문서가 자동으로 완성',
-    qualityPoint: '체계적인 문서 구조와 상세한 기술 스펙',
     icon: '',
   },
   {
@@ -31,7 +28,6 @@ const steps: Step[] = [
     title: 'AI 개발',
     description: '코드 작성과 테스트 자동화',
     easyPoint: '코드 한 줄 몰라도 괜찮아요',
-    qualityPoint: '모든 언어와 프레임워크 지원',
     icon: '',
   },
   {
@@ -39,7 +35,6 @@ const steps: Step[] = [
     title: '실시간 확인',
     description: '프리뷰에서 즉시 확인',
     easyPoint: '수정사항도 대화로 즉시 반영',
-    qualityPoint: '실시간 프리뷰로 결과 확인',
     icon: '',
   },
   {
@@ -47,12 +42,11 @@ const steps: Step[] = [
     title: '배포',
     description: '완성된 제품 즉시 배포',
     easyPoint: '버튼 하나로 전세계에 공개',
-    qualityPoint: '클라우드 인프라 자동 구성',
     icon: '',
   },
 ];
 
-function StepCard({ step, title, description, easyPoint, qualityPoint, icon, index }: Step & { index: number }) {
+function StepCard({ step, title, description, easyPoint, index }: Step & { index: number }) {
   return (
     <AnimatedSection delay={index * 100}>
       <div className="relative bg-surface border border-border rounded-2xl p-6 hover:border-brand-primary/50 transition-all hover:shadow-xl hover:shadow-brand-primary/10 group h-full">
@@ -66,18 +60,10 @@ function StepCard({ step, title, description, easyPoint, qualityPoint, icon, ind
         <p className="text-sm text-muted-foreground mb-4 text-center">{description}</p>
 
         {/* Easy Point Badge */}
-        <div className="mb-3 p-3 bg-green-500/10 border border-green-500/30 rounded-lg">
+        <div className="p-3 bg-green-500/10 border border-green-500/30 rounded-lg">
           <div>
             <p className="text-xs font-semibold text-green-600 dark:text-green-400 mb-1">쉬운 점</p>
             <p className="text-sm text-foreground">{easyPoint}</p>
-          </div>
-        </div>
-
-        {/* Quality Point Badge */}
-        <div className="p-3 bg-blue-500/10 border border-blue-500/30 rounded-lg">
-          <div>
-            <p className="text-xs font-semibold text-blue-600 dark:text-blue-400 mb-1">결과물 품질</p>
-            <p className="text-sm text-foreground">{qualityPoint}</p>
           </div>
         </div>
 
