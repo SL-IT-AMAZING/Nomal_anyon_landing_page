@@ -13,42 +13,42 @@ const testimonials: Testimonial[] = [
     quote: 'ANYON 덕분에 3일 만에 MVP를 배포했습니다. 외주 견적의 1/100 비용으로!',
     author: '김철수',
     role: 'Startup Founder',
-    avatar: 'https://i.pravatar.cc/150?img=12',
+    avatar: '👨‍💼',
     rating: 5,
   },
   {
     quote: '코딩을 전혀 모르지만 실제로 작동하는 앱을 만들 수 있었어요. 놀라워요!',
     author: '박영희',
     role: 'Product Manager',
-    avatar: 'https://i.pravatar.cc/150?img=5',
+    avatar: '👩‍💻',
     rating: 5,
   },
   {
     quote: '설계부터 제대로 해주니 나중에 유지보수가 너무 편합니다.',
     author: '이민수',
     role: 'Solo Developer',
-    avatar: 'https://i.pravatar.cc/150?img=33',
+    avatar: '👨‍💻',
     rating: 5,
   },
   {
     quote: 'AI가 개발하는 속도가 정말 빨라서 1주일이면 충분했습니다.',
     author: '정수진',
     role: 'E-commerce Owner',
-    avatar: 'https://i.pravatar.cc/150?img=9',
+    avatar: '👩‍🔧',
     rating: 5,
   },
   {
     quote: '기술 스펙을 자동으로 만들어주니 개발자와 소통이 훨씬 쉬워졌어요.',
     author: '최동욱',
     role: 'Project Manager',
-    avatar: 'https://i.pravatar.cc/150?img=52',
+    avatar: '👨‍🎓',
     rating: 5,
   },
   {
     quote: '프리뷰 기능 덕분에 고객에게 빠르게 시연할 수 있었습니다.',
     author: '한지원',
     role: 'Marketing Lead',
-    avatar: 'https://i.pravatar.cc/150?img=16',
+    avatar: '👩‍🎨',
     rating: 5,
   },
 ];
@@ -80,11 +80,9 @@ function TestimonialCard({
 
         {/* Author */}
         <div className="flex items-center gap-4">
-          <img
-            src={avatar}
-            alt={author}
-            className="w-12 h-12 rounded-full border-2 border-border"
-          />
+          <div className="w-12 h-12 rounded-full bg-surface border-2 border-border flex items-center justify-center text-2xl">
+            {avatar}
+          </div>
           <div>
             <p className="font-semibold text-foreground">{author}</p>
             <p className="text-sm text-muted">{role}</p>

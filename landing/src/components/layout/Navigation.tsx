@@ -4,8 +4,13 @@ export function Navigation() {
       <div className="max-w-7xl mx-auto px-6 py-4">
         <div className="flex items-center justify-between">
           {/* Logo */}
-          <div className="text-2xl font-bold">
-            <span className="brand-gradient">ANYON</span>
+          <div className="flex items-center gap-2">
+            <img
+              src="/logos/logo-anyon.png"
+              alt="ANYON"
+              className="h-8 w-8 brightness-0 invert"
+            />
+            <span className="text-3xl font-bold brand-gradient">ANYON</span>
           </div>
 
           {/* Navigation Links */}
@@ -13,19 +18,17 @@ export function Navigation() {
             <a href="#features" className="text-foreground/80 hover:text-foreground transition-colors">
               기능
             </a>
-            <a href="#testimonials" className="text-foreground/80 hover:text-foreground transition-colors">
-              사용자 후기
+            <a href="#comparison" className="text-foreground/80 hover:text-foreground transition-colors">
+              비교
             </a>
             <a href="#workflow" className="text-foreground/80 hover:text-foreground transition-colors">
               작동 방식
             </a>
-            <a
-              href="https://github.com/anyon"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-foreground/80 hover:text-foreground transition-colors"
-            >
-              GitHub
+            <a href="#pricing" className="text-foreground/80 hover:text-foreground transition-colors">
+              가격
+            </a>
+            <a href="#faq" className="text-foreground/80 hover:text-foreground transition-colors">
+              FAQ
             </a>
           </div>
 
