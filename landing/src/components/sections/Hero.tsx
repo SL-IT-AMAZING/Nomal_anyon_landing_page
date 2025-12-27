@@ -9,16 +9,16 @@ export function Hero() {
   return (
     <section className="relative min-h-screen flex items-center justify-center px-4 sm:px-6 pt-20 pb-10 overflow-hidden">
       {/* DotGrid Background */}
-      <div className="absolute inset-0 opacity-20">
+      <div className="absolute inset-0 opacity-40">
         <DotGrid
-          dotSize={3}
-          gap={40}
-          baseColor="#5227FF"
+          dotSize={4}
+          gap={35}
+          baseColor="#FF8C42"
           activeColor="#FF6B35"
-          proximity={180}
+          proximity={200}
           speedTrigger={80}
           shockRadius={300}
-          shockStrength={8}
+          shockStrength={10}
         />
       </div>
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,_var(--color-brand-primary)_0%,_transparent_70%)] opacity-10"></div>
