@@ -53,8 +53,8 @@ function hexToRgb(hex: string) {
 const DotGrid: React.FC<DotGridProps> = ({
   dotSize = 16,
   gap = 32,
-  baseColor = '#5227FF',
-  activeColor = '#5227FF',
+  baseColor = '#C8D5E0',
+  activeColor = '#B8C5D0',
   proximity = 150,
   speedTrigger = 100,
   shockRadius = 250,
@@ -81,6 +81,20 @@ const DotGrid: React.FC<DotGridProps> = ({
 
   const baseRgb = useMemo(() => hexToRgb(baseColor), [baseColor]);
   const activeRgb = useMemo(() => hexToRgb(activeColor), [activeColor]);
+
+  // 사전 계산된 색상 그라디언트 배열 (101단계: 0~100)
+  const colorGradient = useMemo(() => {
+    const steps = 101;
+    const colors: string[] = new Array(steps);
+    for (let i = 0; i < steps; i++) {
+      const t = i / 100;
+      const r = (baseRgb.r + (activeRgb.r - baseRgb.r) * t) | 0;
+      const g = (baseRgb.g + (activeRgb.g - baseRgb.g) * t) | 0;
+      const b = (baseRgb.b + (activeRgb.b - baseRgb.b) * t) | 0;
+      colors[i] = `rgb(${r},${g},${b})`;
+    }
+    return colors;
+  }, [baseRgb, activeRgb]);
 
   const circlePath = useMemo(() => {
     if (typeof window === 'undefined' || !window.Path2D) return null;
@@ -134,6 +148,8 @@ const DotGrid: React.FC<DotGridProps> = ({
 
     let rafId: number;
     const proxSq = proximity * proximity;
+    // sqrt 대신 사용할 역수 (1/proximity를 미리 계산)
+    const invProximity = 1 / proximity;
 
     const draw = () => {
       const canvas = canvasRef.current;
@@ -143,22 +159,27 @@ const DotGrid: React.FC<DotGridProps> = ({
       ctx.clearRect(0, 0, canvas.width, canvas.height);
 
       const { x: px, y: py } = pointerRef.current;
+      const dots = dotsRef.current;
+      const colors = colorGradient;
 
-      for (const dot of dotsRef.current) {
+      for (let i = 0, len = dots.length; i < len; i++) {
+        const dot = dots[i];
         const ox = dot.cx + dot.xOffset;
         const oy = dot.cy + dot.yOffset;
         const dx = dot.cx - px;
         const dy = dot.cy - py;
         const dsq = dx * dx + dy * dy;
 
-        let style = baseColor;
+        let style: string;
         if (dsq <= proxSq) {
+          // sqrt를 사용하지만 t 계산에만 사용 (시각적 동일성 유지)
           const dist = Math.sqrt(dsq);
-          const t = 1 - dist / proximity;
-          const r = Math.round(baseRgb.r + (activeRgb.r - baseRgb.r) * t);
-          const g = Math.round(baseRgb.g + (activeRgb.g - baseRgb.g) * t);
-          const b = Math.round(baseRgb.b + (activeRgb.b - baseRgb.b) * t);
-          style = `rgb(${r},${g},${b})`;
+          const t = 1 - dist * invProximity;
+          // 사전 계산된 색상 배열에서 조회 (0~100 인덱스)
+          const idx = (t * 100) | 0;
+          style = colors[idx];
+        } else {
+          style = colors[0];
         }
 
         ctx.save();
@@ -173,7 +194,7 @@ const DotGrid: React.FC<DotGridProps> = ({
 
     draw();
     return () => cancelAnimationFrame(rafId);
-  }, [proximity, baseColor, activeRgb, baseRgb, circlePath]);
+  }, [proximity, baseColor, colorGradient, circlePath]);
 
   useEffect(() => {
     buildGrid();

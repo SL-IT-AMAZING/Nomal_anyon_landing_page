@@ -1,4 +1,17 @@
 {
+  "interactiveDemo": {
+    "title": "What would you like to do?",
+    "choices": {
+      "mvp": {
+        "title": "MVP Development",
+        "description": "Build new features with AI-assisted planning and documentation"
+      },
+      "maintenance": {
+        "title": "Maintenance",
+        "description": "Fix bugs, refactor code, and maintain existing features"
+      }
+    }
+  },
   "nav": {
     "features": "Features",
     "comparison": "Comparison",
@@ -8,10 +21,15 @@
     "cta": "Get Started"
   },
   "hero": {
-    "title1": "Even if you're new to coding",
-    "title2": "Build anything in 3 days",
-    "description": "<strong>6 design documents auto-generated</strong> - PRD, UX, UI, TRD, Architecture, ERD<br />Systematic development process through conversation alone",
-    "ctaPrimary": "Start for Free →",
+    "title1": "For Non-Technical Founders",
+    "title2": "From MVP to Production & Maintenance",
+    "description": "Build everything through conversation, no developers needed<br /><strong>6 design documents auto-generated</strong> · PRD, UX, UI, TRD, Architecture, ERD",
+    "ctaPrimary": "Download",
+    "downloadOptions": {
+      "mac": "macOS",
+      "windows": "Windows",
+      "linux": "Linux"
+    },
     "ctaSecondary": "Watch Demo",
     "demoAlert": "Demo is coming soon. Stay tuned!"
   },
@@ -90,25 +108,25 @@
     "easyPointLabel": "Easy Point"
   },
   "pricing": {
-    "title": "Simple and Transparent Pricing",
-    "subtitle": "Sign up now for <strong>completely free</strong> early access",
-    "description": "Special discounts for early access users even after official launch",
-    "period": "/ month",
+    "title": "Beta Program",
+    "subtitle": "Sign up now for <strong>completely free</strong> beta access",
+    "description": "Get stuck? Our dev team will help · Half-price outsourcing available",
+    "period": "",
     "tiers": {
       "free": {
-        "name": "Free (Early Access)",
-        "price": "$0",
-        "description": "All features free during early access period",
-        "badge": "Free Now!",
+        "name": "Beta Program",
+        "price": "Free",
+        "description": "All features free during beta + dedicated dev team support",
+        "badge": "Beta Free!",
         "features": [
           "6 auto-generated documents (PRD, UX, UI, TRD, Architecture, ERD)",
           "Real code generation (React + TypeScript)",
           "Unlimited projects",
           "One-click deployment",
-          "Community support",
-          "Special discount after official launch"
+          "Dedicated dev team support when stuck",
+          "Half-price outsourcing available"
         ],
-        "cta": "Start Free Now"
+        "cta": "Join Beta Program"
       },
       "basic": {
         "name": "Basic",
@@ -116,7 +134,7 @@
         "originalPrice": "After official launch",
         "description": "Perfect for individual developers and small projects",
         "features": [
-          "All Free plan features",
+          "All Beta plan features",
           "Premium template library",
           "Advanced customization options",
           "Priority support (48hr response)",
@@ -152,19 +170,27 @@
   },
   "faq": {
     "title": "Frequently Asked Questions",
-    "subtitle": "Get answers to common questions about ANYON",
+    "subtitle": "ANYON Guide for Non-Technical Founders",
     "items": [
       {
         "question": "Can I really use this without knowing how to code?",
-        "answer": "Yes! ANYON is designed for non-developers. Through conversation with AI alone, it auto-generates all documents including PRD, UX/UI design, architecture, and ERD, then implements them in actual code. You can create professional-grade products with zero development knowledge."
+        "answer": "Yes! ANYON is designed for non-technical founders. Through conversation with AI alone, it auto-generates all documents including PRD, UX/UI design, architecture, and ERD, then implements them in actual code. You can create professional-grade products with zero development knowledge."
+      },
+      {
+        "question": "Is it really free during the beta period?",
+        "answer": "Yes, all features are completely free during the beta period. No hidden costs, no credit card required."
+      },
+      {
+        "question": "What if I get stuck?",
+        "answer": "During the beta period, our dev team provides dedicated support. We'll help you directly when you're stuck, and half-price outsourcing is available if needed."
       },
       {
         "question": "What types of apps can I build?",
         "answer": "You can build various products including web applications, mobile apps, SaaS products, e-commerce platforms, admin dashboards, and more. Built with modern stack (React, TypeScript, Node.js) and ready for production deployment."
       },
       {
-        "question": "How much does it cost?",
-        "answer": "Currently completely free during early access period. After official launch, plans will be Basic ($20/month) and Pro ($100/month). Sign up now to receive special discount benefits."
+        "question": "Can I handle maintenance on my own?",
+        "answer": "Yes! This is one of ANYON's biggest advantages. Just as you developed through conversation, you can modify and update through conversation. Bug fixes, new features, design changes - all possible through conversation alone."
       },
       {
         "question": "What's the quality of generated code?",
@@ -175,23 +201,15 @@
         "answer": "Supports one-click deployment to major platforms like Vercel, Netlify, and AWS. Generated projects have standard structure, allowing free deployment to any hosting service of your choice."
       },
       {
-        "question": "Can I modify after development?",
-        "answer": "Absolutely! You have 100% ownership of generated code and can modify it yourself or hire developers for customization anytime. You can also continue developing additional features through AI."
-      },
-      {
-        "question": "How do I get customer support?",
-        "answer": "We provide Discord community, email support, and detailed documentation. Pro plan users receive priority support and 1:1 consultation."
-      },
-      {
         "question": "How is data security handled?",
         "answer": "All data is encrypted and stored securely. Generated code and projects are completely user-owned and can be exported anytime. We comply with GDPR and major security standards."
       }
     ]
   },
   "cta": {
-    "title": "Get Started Now",
-    "description": "AI development platform for non-developers. Start free and turn your ideas into products.",
-    "button": "Start for Free"
+    "title": "Join the Beta Now",
+    "description": "AI development platform for non-technical founders. Start free, and our dev team will help when you're stuck.",
+    "button": "Join Beta Program"
   },
   "comparison": {
     "title": "Why <span>ANYON</span>?",
@@ -210,7 +228,7 @@
       {
         "feature": "Development Cost",
         "traditional": "$50,000 ~ $200,000",
-        "anyon": "$20/month (Currently Free)"
+        "anyon": "Free during beta"
       },
       {
         "feature": "Required Team",
@@ -233,9 +251,9 @@
         "anyon": "Instant changes through conversation"
       },
       {
-        "feature": "Code Quality",
-        "traditional": "Depends on team capability",
-        "anyon": "Industry standards guaranteed"
+        "feature": "Maintenance",
+        "traditional": "Separate contract required",
+        "anyon": "Self-maintain through conversation"
       },
       {
         "feature": "Deployment",
@@ -246,141 +264,108 @@
     "cta": {
       "title": "<span>99% cost savings</span>, 100x faster development",
       "description": "Before spending tens of thousands on outsourcing, try ANYON first.",
-      "button": "Get Started Now →"
+      "button": "Join Beta Program →"
     }
   },
   "useCases": {
-    "title": "Who Is This For?",
-    "subtitle": "ANYON is perfect for these professionals",
+    "title": "Non-Technical Founder Struggles",
+    "subtitle": "Sound familiar?",
     "items": [
       {
-        "title": "Startup Founders",
-        "description": "Early-stage startups needing quick MVP validation",
-        "problem": "High outsourcing costs, long development time, communication difficulties",
-        "solution": "Launch MVP in 3 days with ANYON and test market response",
+        "title": "How do I build without a developer?",
+        "description": "Great idea, but no developer on the team",
+        "problem": "Starting up without a CTO feels overwhelming, and hiring developers takes too much time and money",
+        "solution": "Build your MVP in 3 days with ANYON through conversation alone",
         "results": [
-          "99% cost reduction ($50K+ → $20/month)",
-          "MVP launch time 3-6 months → 3 days",
+          "Launch MVP without hiring developers",
+          "3-6 months → 3 days",
           "Instant prototype for investor meetings"
         ]
       },
       {
-        "title": "Freelancers & Solopreneurs",
-        "description": "Handling diverse client projects solo",
-        "problem": "Outsourcing costs reduce project margins",
-        "solution": "Develop directly with ANYON to maximize margins",
+        "title": "Outsourcing is too expensive",
+        "description": "Got a quote for tens of thousands",
+        "problem": "$30K-$100K outsourcing cost is too heavy for early-stage startups",
+        "solution": "Free during beta + half-price outsourcing when needed",
         "results": [
-          "Offer clients lower prices",
-          "Project margins increase 200-300%",
-          "Complete independence from developers"
+          "Completely free during beta",
+          "Half-price if outsourcing needed",
+          "99% cost reduction"
         ]
       },
       {
-        "title": "SMBs & Small Businesses",
-        "description": "Need internal automation and custom solutions",
-        "problem": "Expensive ERP/CRM subscriptions, off-the-shelf solutions don't fit",
-        "solution": "Build custom management systems with ANYON",
+        "title": "What about maintenance after launch?",
+        "description": "How do I make changes after building?",
+        "problem": "Every bug fix and feature addition costs money and creates developer dependency",
+        "solution": "Self-maintain with ANYON - modify and update through conversation",
         "results": [
-          "Save tens of thousands on annual SaaS fees",
-          "Perfect fit for your business",
-          "Build systems without hiring IT staff"
-        ]
-      },
-      {
-        "title": "E-commerce & Online Business",
-        "description": "Online store and marketplace operators",
-        "problem": "Platform fees burden, no customization possible",
-        "solution": "Build independent shopping platform with ANYON",
-        "results": [
-          "Zero platform fees (save 5-10% of revenue)",
-          "Full customization freedom",
-          "100% customer data ownership"
-        ]
-      },
-      {
-        "title": "Digital Agencies",
-        "description": "Handling web/app development projects for clients",
-        "problem": "Outsourcing difficulties, delays, reduced margins",
-        "solution": "Build in-house development capacity with ANYON",
-        "results": [
-          "Project margins increase 300-500%",
-          "Faster delivery improves client satisfaction",
-          "Expand business with development services"
-        ]
-      },
-      {
-        "title": "Education & Non-Profit",
-        "description": "Schools, educational institutions, non-profit organizations",
-        "problem": "Limited budgets, no IT expertise",
-        "solution": "Build needed systems with ANYON at low/no cost",
-        "results": [
-          "Custom systems on limited budgets",
-          "Build student management, attendance, grading systems",
-          "Even cheaper with non-profit discounts"
+          "Fix bugs yourself through conversation",
+          "Add new features through conversation",
+          "Complete freedom from developer dependency"
         ]
       }
     ],
     "cta": {
-      "description": "Not sure if it's right for you? Start for free and see.",
-      "button": "Start for Free →"
+      "description": "Built for non-technical founders. Start free now.",
+      "button": "Join Beta Program →"
     },
     "labels": {
-      "problem": "Challenge",
+      "problem": "Struggle",
       "solution": "ANYON Solution",
       "results": "Expected Results"
     }
   },
   "testimonials": {
-    "title": "User Stories",
-    "subtitle": "Hear from real users' experiences",
+    "title": "Stories from Non-Technical Founders",
+    "subtitle": "Experiences from those who built MVPs without coding",
     "items": [
       {
-        "quote": "Thanks to ANYON, I deployed my MVP in 3 days. At 1/100th the cost of outsourcing quotes!",
+        "quote": "Deployed my MVP in 3 days without a developer. Could demo it right at the investor meeting!",
         "author": "Kim Dohyun",
         "role": "Startup Founder",
         "avatar": "👨‍💼",
         "rating": 5
       },
       {
-        "quote": "I don't know coding at all, but I built a working app. Amazing!",
+        "quote": "I don't know coding at all, but I built a working app. Really just through conversation!",
         "author": "Lee Seoyeon",
-        "role": "Product Manager",
+        "role": "Solo Founder",
         "avatar": "👩‍💻",
         "rating": 5
       },
       {
-        "quote": "Proper design from the start makes maintenance so much easier.",
+        "quote": "Got stuck on something and the dev team helped right away. Beta benefits are real.",
         "author": "Park Junhyeok",
-        "role": "Solo Developer",
+        "role": "Commerce Founder",
         "avatar": "👨‍💻",
         "rating": 5
       },
       {
-        "quote": "AI development speed is incredible - one week was enough.",
+        "quote": "I handle maintenance myself. When there's a bug, I fix it through conversation.",
         "author": "Choi Jieun",
-        "role": "E-commerce Owner",
+        "role": "SaaS Founder",
         "avatar": "👩‍🔧",
         "rating": 5
       },
       {
-        "quote": "Auto-generated tech specs made communication with developers much easier.",
+        "quote": "Got a $50K outsourcing quote, built it free with ANYON. Still can't believe it.",
         "author": "Jung Minwoo",
-        "role": "Project Manager",
+        "role": "EdTech Founder",
         "avatar": "👨‍🎓",
         "rating": 5
       },
       {
-        "quote": "Preview feature let me demo to clients quickly.",
+        "quote": "Proved that non-technical people can start a company too. Now all you need is an idea!",
         "author": "Kang Haneul",
-        "role": "Marketing Lead",
+        "role": "Platform Founder",
         "avatar": "👩‍🎨",
         "rating": 5
       }
     ]
   },
   "footer": {
-    "brandDescription": "AI-powered development platform for non-developers. Build professional products through conversation.",
-    "brandTagline": "Anyone can launch an MVP in 3 days with the latest AI technology.",
+    "brandDescription": "AI development platform for non-technical founders. Build professional products through conversation.",
+    "brandTagline": "From MVP to production & maintenance - build without developers.",
     "sections": {
       "product": {
         "title": "Product",

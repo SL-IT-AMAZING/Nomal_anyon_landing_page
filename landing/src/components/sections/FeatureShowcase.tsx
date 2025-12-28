@@ -100,14 +100,16 @@ export function FeatureShowcase() {
     const scrollContainer = scrollContainerRef.current;
     if (!scrollContainer) return;
 
+    // 일시정지 또는 드래그 중이면 RAF를 시작하지 않음
+    if (isPaused || isDragging) return;
+
     let animationFrameId: number;
-    const scrollSpeed = 0.8; // 픽셀/프레임
+    const scrollSpeed = 0.8;
 
     const animate = () => {
-      if (!isPaused && !isDragging && scrollContainer) {
+      if (scrollContainer) {
         scrollContainer.scrollLeft += scrollSpeed;
 
-        // 스크롤이 끝에 도달하면 처음으로 되돌림
         if (scrollContainer.scrollLeft >= scrollContainer.scrollWidth / 2) {
           scrollContainer.scrollLeft = 0;
         }
@@ -162,8 +164,8 @@ export function FeatureShowcase() {
         <DotGrid
           dotSize={4}
           gap={35}
-          baseColor="#FFB380"
-          activeColor="#FF8C42"
+          baseColor="#C8D5E0"
+          activeColor="#B8C5D0"
           proximity={200}
           speedTrigger={80}
           shockRadius={300}

@@ -4,17 +4,17 @@ export default {
   theme: {
     extend: {
       colors: {
-        'brand-primary': '#d97757',
-        'brand-secondary': '#ff9a7a',
-        'brand-primary-hover': '#c06646',
+        'brand-primary': '#B8C5D0',
+        'brand-secondary': '#D4DDE5',
+        'brand-primary-hover': '#9AABB8',
         background: '#0a0a0a',
         surface: '#1a1a1a',
         foreground: '#f7f7f4',
         muted: 'rgb(247 247 244 / 0.6)',
         border: 'rgb(247 247 244 / 0.1)',
-        'border-hover': 'rgb(217 119 87 / 0.5)',
+        'border-hover': 'rgb(184 197 208 / 0.5)',
         success: '#1f8a65',
-        warning: '#f54e00',
+        warning: '#B8C5D0',
       },
       fontFamily: {
         heading: ['Playfair Display', 'ui-serif', 'Georgia', 'serif'],

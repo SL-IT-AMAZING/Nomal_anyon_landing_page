@@ -92,7 +92,7 @@ export function Workflow() {
       {/* LiquidEther Background */}
       <div className="absolute inset-0 opacity-15">
         <LiquidEther
-          colors={['#FF8C42', '#FFB380', '#FFCC99']}
+          colors={['#B8C5D0', '#C8D5E0', '#D4DDE5']}
           autoDemo={true}
           autoSpeed={0.5}
           autoIntensity={2.2}
@@ -132,7 +132,7 @@ export function Workflow() {
               className="text-sm sm:text-base text-muted-foreground mb-5 sm:mb-6"
               dangerouslySetInnerHTML={{ __html: t('workflow.cta.stats') }}
             />
-            <button className="px-6 py-3 sm:px-8 sm:py-4 md:px-10 md:py-4 bg-brand-primary hover:bg-brand-primary-hover text-white font-bold rounded-xl transition-all transform hover:scale-105 shadow-xl shadow-brand-primary/30 text-sm sm:text-base">
+            <button className="px-6 py-3 sm:px-8 sm:py-4 md:px-10 md:py-4 bg-brand-primary hover:bg-brand-primary-hover text-black font-bold rounded-xl transition-all transform hover:scale-105 shadow-xl shadow-brand-primary/30 text-sm sm:text-base">
               {t('workflow.cta.button')}
             </button>
           </div>

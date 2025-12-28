@@ -9,9 +9,8 @@ export function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8 sm:gap-10 md:gap-12 mb-8 sm:mb-10 md:mb-12">
           {/* Brand */}
           <div className="md:col-span-2">
-            <div className="flex items-center gap-2 mb-3">
-              <img src="/logos/logo-anyon.png" alt="ANYON" className="h-6 w-6 sm:h-8 sm:w-8 brightness-0 invert" />
-              <span className="text-xl sm:text-2xl font-bold text-white">ANYON</span>
+            <div className="flex items-center justify-center md:justify-start mb-4">
+              <img src="/logos/logo2.png" alt="ANYON" className="h-24 sm:h-28 md:h-32 brightness-0 invert" />
             </div>
             <p className="text-xs sm:text-sm text-muted leading-relaxed mb-3 sm:mb-4">
               {t('footer.brandDescription')}

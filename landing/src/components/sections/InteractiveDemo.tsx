@@ -1,25 +1,24 @@
 import { useState } from 'react';
+import { useTranslation } from 'react-i18next';
 
 interface ChoiceCard {
-  title: string;
-  description: string;
+  key: string;
   iconSrc: string;
 }
 
 const choices: ChoiceCard[] = [
   {
-    title: 'MVP Development',
-    description: 'Build new features with AI-assisted planning and documentation',
+    key: 'mvp',
     iconSrc: '/icons/mvp-icon.png',
   },
   {
-    title: 'Maintenance',
-    description: 'Fix bugs, refactor code, and maintain existing features',
+    key: 'maintenance',
     iconSrc: '/icons/maintain-icon.png',
   },
 ];
 
 export function InteractiveDemo() {
+  const { t } = useTranslation();
   const [hoveredCard, setHoveredCard] = useState<number | null>(null);
 
   return (
@@ -55,7 +54,7 @@ export function InteractiveDemo() {
         {/* Main Content Area */}
         <div className="flex-1 p-4 sm:p-6 md:p-8 lg:p-12">
           <h2 className="text-xl sm:text-2xl md:text-3xl font-bold text-center text-foreground mb-6 sm:mb-8 md:mb-12">
-            What would you like to do?
+            {t('interactiveDemo.title')}
           </h2>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6">
@@ -74,7 +73,7 @@ export function InteractiveDemo() {
                 <div className="mb-4 sm:mb-6 flex justify-center">
                   <img
                     src={choice.iconSrc}
-                    alt={choice.title}
+                    alt={t(`interactiveDemo.choices.${choice.key}.title`)}
                     className={`w-20 h-20 sm:w-24 sm:h-24 md:w-32 md:h-32 object-contain brightness-0 invert transition-transform duration-300 ${
                       hoveredCard === index ? 'scale-110 rotate-6' : 'scale-100'
                     }`}
@@ -83,12 +82,12 @@ export function InteractiveDemo() {
 
                 {/* Title */}
                 <h3 className="text-lg sm:text-xl md:text-2xl font-bold text-foreground mb-2 sm:mb-3">
-                  {choice.title}
+                  {t(`interactiveDemo.choices.${choice.key}.title`)}
                 </h3>
 
                 {/* Description */}
                 <p className="text-xs sm:text-sm text-muted leading-relaxed">
-                  {choice.description}
+                  {t(`interactiveDemo.choices.${choice.key}.description`)}
                 </p>
               </button>
             ))}

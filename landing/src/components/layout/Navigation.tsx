@@ -23,13 +23,12 @@ export function Navigation() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 py-3 sm:py-4">
         <div className="flex items-center justify-between">
           {/* Logo */}
-          <div className="flex items-center gap-2">
+          <div className="flex items-center">
             <img
-              src="/logos/logo-anyon.png"
+              src="/logos/logo1.png"
               alt="ANYON"
-              className="h-6 w-6 sm:h-8 sm:w-8 brightness-0 invert"
+              className="h-6 sm:h-8 brightness-0 invert"
             />
-            <span className="text-xl sm:text-2xl md:text-3xl font-bold text-white">ANYON</span>
           </div>
 
           {/* Desktop Navigation Links */}
@@ -48,7 +47,7 @@ export function Navigation() {
           {/* Right Side - CTA Button & Language Toggle */}
           <div className="flex items-center gap-2 sm:gap-4">
             <LanguageToggle />
-            <button className="hidden sm:block px-4 py-2 sm:px-6 sm:py-2.5 bg-brand-primary hover:bg-brand-primary-hover text-white font-medium rounded-lg transition-colors text-sm sm:text-base">
+            <button className="hidden sm:block px-4 py-2 sm:px-6 sm:py-2.5 bg-brand-primary hover:bg-brand-primary-hover text-black font-medium rounded-lg transition-colors text-sm sm:text-base">
               {t('nav.cta')}
             </button>
 
@@ -86,7 +85,7 @@ export function Navigation() {
                 {link.label}
               </a>
             ))}
-            <button className="w-full mt-4 px-6 py-3 bg-brand-primary hover:bg-brand-primary-hover text-white font-medium rounded-lg transition-colors">
+            <button className="w-full mt-4 px-6 py-3 bg-brand-primary hover:bg-brand-primary-hover text-black font-medium rounded-lg transition-colors">
               {t('nav.cta')}
             </button>
           </div>

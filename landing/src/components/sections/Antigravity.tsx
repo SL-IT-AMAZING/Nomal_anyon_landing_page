@@ -28,7 +28,7 @@ const AntigravityInner: React.FC<AntigravityProps> = ({
   waveAmplitude = 1,
   particleSize = 2,
   lerpSpeed = 0.1,
-  color = '#FF9FFC',
+  color = '#B8C5D0',
   autoAnimate = false,
   particleVariance = 1,
   rotationSpeed = 0,
@@ -92,9 +92,12 @@ const AntigravityInner: React.FC<AntigravityProps> = ({
 
     const { viewport: v, pointer: m } = state;
 
-    const mouseDist = Math.sqrt(Math.pow(m.x - lastMousePos.current.x, 2) + Math.pow(m.y - lastMousePos.current.y, 2));
+    // Math.pow 대신 직접 곱셈
+    const mdx = m.x - lastMousePos.current.x;
+    const mdy = m.y - lastMousePos.current.y;
+    const mouseDistSq = mdx * mdx + mdy * mdy;
 
-    if (mouseDist > 0.001) {
+    if (mouseDistSq > 0.000001) {
       lastMouseMoveTime.current = Date.now();
       lastMousePos.current = { x: m.x, y: m.y };
     }
@@ -117,10 +120,14 @@ const AntigravityInner: React.FC<AntigravityProps> = ({
 
     const globalRotation = state.clock.getElapsedTime() * rotationSpeed;
 
-    particles.forEach((particle, i) => {
-      let { t, speed, mx, my, mz, cz, randomRadiusOffset } = particle;
+    // 사전 계산: magnetRadius 제곱
+    const magnetRadiusSq = magnetRadius * magnetRadius;
 
-      t = particle.t += speed / 2;
+    for (let i = 0, len = particles.length; i < len; i++) {
+      const particle = particles[i];
+      const { speed, mx, my, mz, cz, randomRadiusOffset } = particle;
+
+      const t = particle.t += speed / 2;
 
       const projectionFactor = 1 - cz / 50;
       const projectedTargetX = targetX * projectionFactor;
@@ -128,11 +135,14 @@ const AntigravityInner: React.FC<AntigravityProps> = ({
 
       const dx = mx - projectedTargetX;
       const dy = my - projectedTargetY;
-      const dist = Math.sqrt(dx * dx + dy * dy);
+      const distSq = dx * dx + dy * dy;
 
-      let targetPos = { x: mx, y: my, z: mz * depthFactor };
+      let targetPosX = mx;
+      let targetPosY = my;
+      let targetPosZ = mz * depthFactor;
 
-      if (dist < magnetRadius) {
+      // sqrt 대신 제곱 비교
+      if (distSq < magnetRadiusSq) {
         const angle = Math.atan2(dy, dx) + globalRotation;
 
         const wave = Math.sin(t * waveSpeed + angle) * (0.5 * waveAmplitude);
@@ -140,23 +150,24 @@ const AntigravityInner: React.FC<AntigravityProps> = ({
 
         const currentRingRadius = ringRadius + wave + deviation;
 
-        targetPos.x = projectedTargetX + currentRingRadius * Math.cos(angle);
-        targetPos.y = projectedTargetY + currentRingRadius * Math.sin(angle);
-        targetPos.z = mz * depthFactor + Math.sin(t) * (1 * waveAmplitude * depthFactor);
+        targetPosX = projectedTargetX + currentRingRadius * Math.cos(angle);
+        targetPosY = projectedTargetY + currentRingRadius * Math.sin(angle);
+        targetPosZ = mz * depthFactor + Math.sin(t) * (waveAmplitude * depthFactor);
       }
 
-      particle.cx += (targetPos.x - particle.cx) * lerpSpeed;
-      particle.cy += (targetPos.y - particle.cy) * lerpSpeed;
-      particle.cz += (targetPos.z - particle.cz) * lerpSpeed;
+      particle.cx += (targetPosX - particle.cx) * lerpSpeed;
+      particle.cy += (targetPosY - particle.cy) * lerpSpeed;
+      particle.cz += (targetPosZ - particle.cz) * lerpSpeed;
 
       dummy.position.set(particle.cx, particle.cy, particle.cz);
 
       dummy.lookAt(projectedTargetX, projectedTargetY, particle.cz);
       dummy.rotateX(Math.PI / 2);
 
-      const currentDistToMouse = Math.sqrt(
-        Math.pow(particle.cx - projectedTargetX, 2) + Math.pow(particle.cy - projectedTargetY, 2)
-      );
+      // Math.pow 대신 직접 곱셈
+      const cdx = particle.cx - projectedTargetX;
+      const cdy = particle.cy - projectedTargetY;
+      const currentDistToMouse = Math.sqrt(cdx * cdx + cdy * cdy);
 
       const distFromRing = Math.abs(currentDistToMouse - ringRadius);
       let scaleFactor = 1 - distFromRing / 10;
@@ -169,7 +180,7 @@ const AntigravityInner: React.FC<AntigravityProps> = ({
       dummy.updateMatrix();
 
       mesh.setMatrixAt(i, dummy.matrix);
-    });
+    }
 
     mesh.instanceMatrix.needsUpdate = true;
   });

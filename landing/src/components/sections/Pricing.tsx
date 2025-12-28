@@ -58,8 +58,8 @@ function PricingCard({ name, price, originalPrice, period, description, features
         <button
           className={`w-full py-3 sm:py-4 rounded-xl font-bold transition-all transform hover:scale-105 text-sm sm:text-base ${
             highlighted
-              ? 'bg-brand-primary hover:bg-brand-primary-hover text-white shadow-xl shadow-brand-primary/30'
-              : 'bg-surface hover:bg-surface/80 text-foreground border border-border hover:border-brand-primary/50'
+              ? 'bg-brand-primary hover:bg-brand-primary-hover text-black shadow-xl shadow-brand-primary/30'
+              : 'bg-surface hover:bg-surface/80 text-black border border-border hover:border-brand-primary/50'
           }`}
         >
           {cta}
@@ -111,8 +111,8 @@ export function Pricing() {
         <DotGrid
           dotSize={4}
           gap={35}
-          baseColor="#FFB380"
-          activeColor="#FF8C42"
+          baseColor="#C8D5E0"
+          activeColor="#B8C5D0"
           proximity={200}
           speedTrigger={80}
           shockRadius={300}
@@ -153,7 +153,7 @@ export function Pricing() {
                   href="https://any-on.dev/"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="px-8 py-3 bg-brand-primary hover:bg-brand-primary-hover text-white font-semibold rounded-lg transition-colors inline-block text-center"
+                  className="px-8 py-3 bg-brand-primary hover:bg-brand-primary-hover text-black font-semibold rounded-lg transition-colors inline-block text-center"
                 >
                   {t('pricing.enterprise.cta')}
                 </a>

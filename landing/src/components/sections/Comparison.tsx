@@ -11,6 +11,33 @@ export function Comparison() {
   const { t } = useTranslation();
   const comparisons = t('comparison.items', { returnObjects: true }) as ComparisonRow[];
 
+  // Keywords to highlight in red
+  const highlightKeywords = (text: string): JSX.Element => {
+    const redKeywords = ['3일', '무료', '혼자', '불필요', '자동 생성', '즉시', '직접', '원클릭'];
+
+    let result: (string | JSX.Element)[] = [text];
+
+    redKeywords.forEach((keyword) => {
+      const newResult: (string | JSX.Element)[] = [];
+      result.forEach((part, idx) => {
+        if (typeof part === 'string') {
+          const parts = part.split(keyword);
+          parts.forEach((p, i) => {
+            if (i > 0) {
+              newResult.push(<span key={`${idx}-${i}`} style={{ color: '#ef4444', fontWeight: 'bold' }}>{keyword}</span>);
+            }
+            if (p) newResult.push(p);
+          });
+        } else {
+          newResult.push(part);
+        }
+      });
+      result = newResult;
+    });
+
+    return <>{result}</>;
+  };
+
   return (
     <section id="comparison" className="relative py-12 sm:py-16 px-4 sm:px-6 bg-surface overflow-hidden">
       <div className="relative z-10 max-w-6xl mx-auto">
@@ -46,7 +73,7 @@ export function Comparison() {
                   <td className="py-2 px-2 sm:py-3 sm:px-4 md:py-5 md:px-6 font-bold text-xs sm:text-sm md:text-base" style={{ color: '#f7f7f4' }}>{row.feature}</td>
                   <td className="py-2 px-2 sm:py-3 sm:px-4 md:py-5 md:px-6 text-center text-xs sm:text-sm md:text-base border-l" style={{ color: 'rgba(247, 247, 244, 0.8)', borderColor: 'rgba(247, 247, 244, 0.3)' }}>{row.traditional}</td>
                   <td className="py-2 px-2 sm:py-3 sm:px-4 md:py-5 md:px-6 text-center border-l text-xs sm:text-sm md:text-base" style={{ borderColor: 'rgba(247, 247, 244, 0.3)' }}>
-                    <span className="font-bold" style={{ color: '#d97757' }}>{row.anyon}</span>
+                    <span className="font-bold" style={{ color: '#B8C5D0' }}>{highlightKeywords(row.anyon)}</span>
                   </td>
                 </tr>
               ))}
@@ -64,7 +91,7 @@ export function Comparison() {
               <p className="text-sm sm:text-base text-muted-foreground mb-4 sm:mb-5">
                 {t('comparison.cta.description')}
               </p>
-              <button className="px-6 py-2.5 sm:px-8 sm:py-3 bg-brand-primary hover:bg-brand-primary-hover text-white font-bold rounded-xl transition-all transform hover:scale-105 shadow-xl shadow-brand-primary/30 text-sm sm:text-base">
+              <button className="px-6 py-2.5 sm:px-8 sm:py-3 bg-brand-primary hover:bg-brand-primary-hover text-black font-bold rounded-xl transition-all transform hover:scale-105 shadow-xl shadow-brand-primary/30 text-sm sm:text-base">
                 {t('comparison.cta.button')}
               </button>
             </div>
