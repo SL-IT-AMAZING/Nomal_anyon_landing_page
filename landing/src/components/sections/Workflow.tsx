@@ -1,6 +1,7 @@
 import { useTranslation } from 'react-i18next';
 import { AnimatedSection } from '../shared/AnimatedSection';
 import LiquidEther from '../LiquidEther';
+import { scrollToBetaForm } from '../../utils/scroll';
 
 interface Step {
   step: number;
@@ -132,8 +133,11 @@ export function Workflow() {
               className="text-sm sm:text-base text-muted-foreground mb-5 sm:mb-6"
               dangerouslySetInnerHTML={{ __html: t('workflow.cta.stats') }}
             />
-            <button className="px-6 py-3 sm:px-8 sm:py-4 md:px-10 md:py-4 bg-brand-primary hover:bg-brand-primary-hover text-black font-bold rounded-xl transition-all transform hover:scale-105 shadow-xl shadow-brand-primary/30 text-sm sm:text-base">
-              {t('workflow.cta.button')}
+            <button
+              onClick={scrollToBetaForm}
+              className="px-6 py-3 sm:px-8 sm:py-4 md:px-10 md:py-4 bg-brand-primary hover:bg-brand-primary-hover text-black font-bold rounded-xl transition-all transform hover:scale-105 shadow-xl shadow-brand-primary/30 text-sm sm:text-base"
+            >
+              {t('common.betaCTA')}
             </button>
           </div>
         </AnimatedSection>

@@ -387,5 +387,20 @@
       }
     },
     "copyright": "© 2025 ANYON. All rights reserved."
+  },
+  "betaSignup": {
+    "title": "Join Beta Program",
+    "subtitle": "Be among the first to experience ANYON",
+    "emailPlaceholder": "Enter your email address",
+    "submitButton": "Sign Up for Beta",
+    "submitting": "Submitting...",
+    "successTitle": "Success!",
+    "successMessage": "Thank you for joining! Check your email for confirmation.",
+    "errorTitle": "Error",
+    "errorMessage": "Something went wrong. Please try again.",
+    "invalidEmail": "Please enter a valid email address"
+  },
+  "common": {
+    "betaCTA": "Join Beta Program →"
   }
 }

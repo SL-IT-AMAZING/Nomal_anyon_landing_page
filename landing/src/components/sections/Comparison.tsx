@@ -1,5 +1,6 @@
 import { useTranslation } from 'react-i18next';
 import { AnimatedSection } from '../shared/AnimatedSection';
+import { scrollToBetaForm } from '../../utils/scroll';
 
 interface ComparisonRow {
   feature: string;
@@ -91,8 +92,11 @@ export function Comparison() {
               <p className="text-sm sm:text-base text-muted-foreground mb-4 sm:mb-5">
                 {t('comparison.cta.description')}
               </p>
-              <button className="px-6 py-2.5 sm:px-8 sm:py-3 bg-brand-primary hover:bg-brand-primary-hover text-black font-bold rounded-xl transition-all transform hover:scale-105 shadow-xl shadow-brand-primary/30 text-sm sm:text-base">
-                {t('comparison.cta.button')}
+              <button
+                onClick={scrollToBetaForm}
+                className="px-6 py-2.5 sm:px-8 sm:py-3 bg-brand-primary hover:bg-brand-primary-hover text-black font-bold rounded-xl transition-all transform hover:scale-105 shadow-xl shadow-brand-primary/30 text-sm sm:text-base"
+              >
+                {t('common.betaCTA')}
               </button>
             </div>
           </div>

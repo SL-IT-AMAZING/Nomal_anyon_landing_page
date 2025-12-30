@@ -10,6 +10,10 @@
     "install:all": "npm install && cd landing && npm install"
   },
   "devDependencies": {
+    "@vercel/node": "^5.5.16",
     "concurrently": "^9.2.1"
+  },
+  "dependencies": {
+    "resend": "^6.6.0"
   }
 }

@@ -1,6 +1,7 @@
 import { useTranslation } from 'react-i18next';
 import { AnimatedSection } from '../shared/AnimatedSection';
 import LiquidEther from '../LiquidEther';
+import { scrollToBetaForm } from '../../utils/scroll';
 
 export function CTA() {
   const { t } = useTranslation();
@@ -35,8 +36,11 @@ export function CTA() {
 
         <AnimatedSection delay={200}>
           <div className="flex justify-center">
-            <button className="px-8 py-4 sm:px-10 sm:py-5 bg-brand-primary hover:bg-brand-primary-hover text-black font-bold text-base sm:text-lg rounded-xl transition-all transform hover:scale-105 shadow-xl shadow-brand-primary/30">
-              {t('cta.button')}
+            <button
+              onClick={scrollToBetaForm}
+              className="px-8 py-4 sm:px-10 sm:py-5 bg-brand-primary hover:bg-brand-primary-hover text-black font-bold text-base sm:text-lg rounded-xl transition-all transform hover:scale-105 shadow-xl shadow-brand-primary/30"
+            >
+              {t('common.betaCTA')}
             </button>
           </div>
         </AnimatedSection>

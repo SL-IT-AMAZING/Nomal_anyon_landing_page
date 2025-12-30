@@ -1,6 +1,7 @@
 import { useTranslation } from 'react-i18next';
 import { AnimatedSection } from '../shared/AnimatedSection';
 import DotGrid from '../DotGrid';
+import { scrollToBetaForm } from '../../utils/scroll';
 
 interface PricingTier {
   name: string;
@@ -56,6 +57,7 @@ function PricingCard({ name, price, originalPrice, period, description, features
         </ul>
 
         <button
+          onClick={scrollToBetaForm}
           className={`w-full py-3 sm:py-4 rounded-xl font-bold transition-all transform hover:scale-105 text-sm sm:text-base ${
             highlighted
               ? 'bg-brand-primary hover:bg-brand-primary-hover text-black shadow-xl shadow-brand-primary/30'

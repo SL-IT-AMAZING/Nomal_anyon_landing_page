@@ -8,6 +8,7 @@ import { Testimonials } from './components/sections/Testimonials';
 import { Workflow } from './components/sections/Workflow';
 import { Pricing } from './components/sections/Pricing';
 import { FAQ } from './components/sections/FAQ';
+import { BetaSignup } from './components/sections/BetaSignup';
 import { CTA } from './components/sections/CTA';
 
 function App() {
@@ -23,6 +24,7 @@ function App() {
         <Workflow />
         <Pricing />
         <FAQ />
+        <BetaSignup />
         <CTA />
       </main>
       <Footer />

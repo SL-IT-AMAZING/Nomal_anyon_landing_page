@@ -387,5 +387,20 @@
       }
     },
     "copyright": "© 2025 ANYON. All rights reserved."
+  },
+  "betaSignup": {
+    "title": "베타 프로그램 참여",
+    "subtitle": "ANYON을 가장 먼저 경험해보세요",
+    "emailPlaceholder": "이메일 주소를 입력하세요",
+    "submitButton": "베타 신청하기",
+    "submitting": "제출 중...",
+    "successTitle": "성공!",
+    "successMessage": "참여해주셔서 감사합니다! 이메일을 확인해주세요.",
+    "errorTitle": "오류",
+    "errorMessage": "문제가 발생했습니다. 다시 시도해주세요.",
+    "invalidEmail": "올바른 이메일 주소를 입력해주세요"
+  },
+  "common": {
+    "betaCTA": "베타 프로그램 참여하기 →"
   }
 }
