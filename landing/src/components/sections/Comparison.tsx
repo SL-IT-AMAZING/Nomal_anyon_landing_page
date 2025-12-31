@@ -1,3 +1,4 @@
+import { type ReactNode } from 'react';
 import { useTranslation } from 'react-i18next';
 import { AnimatedSection } from '../shared/AnimatedSection';
 import { scrollToBetaForm } from '../../utils/scroll';
@@ -13,13 +14,13 @@ export function Comparison() {
   const comparisons = t('comparison.items', { returnObjects: true }) as ComparisonRow[];
 
   // Keywords to highlight in red
-  const highlightKeywords = (text: string): JSX.Element => {
+  const highlightKeywords = (text: string): ReactNode => {
     const redKeywords = ['3일', '무료', '혼자', '불필요', '자동 생성', '즉시', '직접', '원클릭'];
 
-    let result: (string | JSX.Element)[] = [text];
+    let result: (string | ReactNode)[] = [text];
 
     redKeywords.forEach((keyword) => {
-      const newResult: (string | JSX.Element)[] = [];
+      const newResult: (string | ReactNode)[] = [];
       result.forEach((part, idx) => {
         if (typeof part === 'string') {
           const parts = part.split(keyword);
