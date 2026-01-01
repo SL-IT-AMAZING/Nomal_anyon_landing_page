@@ -1,7 +1,7 @@
 {
-  "buildCommand": "npm run build",
+  "buildCommand": "cd landing && npm run build",
   "outputDirectory": "landing/dist",
   "devCommand": "npm run dev",
-  "installCommand": "npm run install:all",
+  "installCommand": "cd landing && npm install",
   "framework": null
 }
