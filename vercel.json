@@ -1,11 +1,11 @@
 {
-  "buildCommand": "npm --prefix landing install && npm --prefix landing run build && npm install",
-  "outputDirectory": "landing/dist",
-  "framework": null,
-  "rewrites": [
-    {
-      "source": "/api/(.*)",
-      "destination": "/api/$1"
+  "github": {
+    "silent": true
+  },
+  "functions": {
+    "api/**/*.ts": {
+      "memory": 1024,
+      "maxDuration": 10
     }
-  ]
+  }
 }
