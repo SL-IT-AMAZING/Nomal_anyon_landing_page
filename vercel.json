@@ -1,7 +1,13 @@
 {
-  "buildCommand": "npm install && npm run build",
-  "outputDirectory": "dist",
+  "buildCommand": "npm install && cd landing && npm install && npm run build",
+  "outputDirectory": "landing/dist",
   "devCommand": "npm run dev",
-  "installCommand": "npm install",
-  "framework": null
+  "installCommand": "npm install && cd landing && npm install",
+  "framework": null,
+  "rewrites": [
+    {
+      "source": "/api/(.*)",
+      "destination": "/api/$1"
+    }
+  ]
 }
