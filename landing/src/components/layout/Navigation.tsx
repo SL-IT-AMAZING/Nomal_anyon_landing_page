@@ -47,9 +47,9 @@ export function Navigation() {
           {/* Right Side - CTA Button & Language Toggle */}
           <div className="flex items-center gap-2 sm:gap-4">
             <LanguageToggle />
-            <button className="hidden sm:block px-4 py-2 sm:px-6 sm:py-2.5 bg-brand-primary hover:bg-brand-primary-hover text-black font-medium rounded-lg transition-colors text-sm sm:text-base">
+            <a href="#beta-signup" className="hidden sm:block px-4 py-2 sm:px-6 sm:py-2.5 bg-brand-primary hover:bg-brand-primary-hover text-black font-medium rounded-lg transition-colors text-sm sm:text-base">
               {t('nav.cta')}
-            </button>
+            </a>
 
             {/* Mobile Menu Button */}
             <button
@@ -85,9 +85,9 @@ export function Navigation() {
                 {link.label}
               </a>
             ))}
-            <button className="w-full mt-4 px-6 py-3 bg-brand-primary hover:bg-brand-primary-hover text-black font-medium rounded-lg transition-colors">
+            <a href="#beta-signup" onClick={handleLinkClick} className="block w-full mt-4 px-6 py-3 bg-brand-primary hover:bg-brand-primary-hover text-black font-medium rounded-lg transition-colors text-center">
               {t('nav.cta')}
-            </button>
+            </a>
           </div>
         </div>
       )}
