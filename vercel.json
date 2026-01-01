@@ -1,15 +1,8 @@
 {
-<<<<<<< HEAD
   "buildCommand": "npm install && cd landing && npm install && npm run build",
   "outputDirectory": "landing/dist",
   "devCommand": "npm run dev",
   "installCommand": "npm install && cd landing && npm install",
-=======
-  "buildCommand": "npm install && npm run build",
-  "outputDirectory": "landing/dist",
-  "devCommand": "npm run dev",
-  "installCommand": "npm install",
->>>>>>> 09a6d3ad91efb71f27f1e2dbd5a9fb059cf85739
   "framework": null,
   "rewrites": [
     {
