@@ -1,6 +1,5 @@
 import { useTranslation } from 'react-i18next';
 import { AnimatedSection } from '../shared/AnimatedSection';
-import { InteractiveDemo } from './InteractiveDemo';
 import DotGrid from '../DotGrid';
 import { scrollToBetaForm } from '../../utils/scroll';
 
@@ -47,19 +46,21 @@ export function Hero() {
             >
               {t('common.betaCTA')}
             </button>
-            <button
-              onClick={() => alert(t('hero.demoAlert'))}
-              className="px-6 py-3 sm:px-8 sm:py-4 md:px-10 md:py-5 bg-surface hover:bg-surface/80 text-foreground text-base sm:text-lg font-semibold rounded-xl border border-border hover:border-brand-primary/50 transition-all w-full sm:w-auto"
-            >
-              {t('hero.ctaSecondary')}
-            </button>
           </div>
         </AnimatedSection>
 
 
         <AnimatedSection delay={500}>
-          <div className="mt-12 sm:mt-16">
-            <InteractiveDemo />
+          <div className="mt-12 sm:mt-16 w-full max-w-5xl mx-auto">
+            <video
+              className="w-full h-auto rounded-2xl sm:rounded-3xl shadow-2xl border border-border"
+              controls
+              loop
+              playsInline
+            >
+              <source src="/mp4/ANYON%20demo%20video%204.mp4" type="video/mp4" />
+              {t('hero.videoNotSupported', 'Your browser does not support the video tag.')}
+            </video>
           </div>
         </AnimatedSection>
       </div>
