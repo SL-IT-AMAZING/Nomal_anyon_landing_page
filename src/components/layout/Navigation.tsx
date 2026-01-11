@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { LanguageToggle } from '../shared/LanguageToggle';
+import { trackNavClick, trackButtonClick } from '../../hooks/useAnalytics';
 
 export function Navigation() {
   const { t } = useTranslation();
@@ -37,6 +38,7 @@ export function Navigation() {
               <a
                 key={link.href}
                 href={link.href}
+                onClick={() => trackNavClick(link.href)}
                 className="text-foreground/80 hover:text-foreground transition-colors"
               >
                 {link.label}
@@ -47,7 +49,11 @@ export function Navigation() {
           {/* Right Side - CTA Button & Language Toggle */}
           <div className="flex items-center gap-2 sm:gap-4">
             <LanguageToggle />
-            <a href="#beta-signup" className="hidden sm:block px-4 py-2 sm:px-6 sm:py-2.5 bg-brand-primary hover:bg-brand-primary-hover text-black font-medium rounded-lg transition-colors text-sm sm:text-base">
+            <a
+              href="#beta-signup"
+              onClick={() => trackButtonClick('nav_cta')}
+              className="hidden sm:block px-4 py-2 sm:px-6 sm:py-2.5 bg-brand-primary hover:bg-brand-primary-hover text-black font-medium rounded-lg transition-colors text-sm sm:text-base"
+            >
               {t('nav.cta')}
             </a>
 
@@ -79,13 +85,23 @@ export function Navigation() {
               <a
                 key={link.href}
                 href={link.href}
-                onClick={handleLinkClick}
+                onClick={() => {
+                  trackNavClick(`mobile_${link.href}`);
+                  handleLinkClick();
+                }}
                 className="block py-2 text-foreground/80 hover:text-foreground transition-colors"
               >
                 {link.label}
               </a>
             ))}
-            <a href="#beta-signup" onClick={handleLinkClick} className="block w-full mt-4 px-6 py-3 bg-brand-primary hover:bg-brand-primary-hover text-black font-medium rounded-lg transition-colors text-center">
+            <a
+              href="#beta-signup"
+              onClick={() => {
+                trackButtonClick('mobile_nav_cta');
+                handleLinkClick();
+              }}
+              className="block w-full mt-4 px-6 py-3 bg-brand-primary hover:bg-brand-primary-hover text-black font-medium rounded-lg transition-colors text-center"
+            >
               {t('nav.cta')}
             </a>
           </div>

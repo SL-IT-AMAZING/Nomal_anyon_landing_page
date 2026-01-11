@@ -2,12 +2,13 @@ import { useTranslation } from 'react-i18next';
 import { AnimatedSection } from '../shared/AnimatedSection';
 import DotGrid from '../DotGrid';
 import { scrollToBetaForm } from '../../utils/scroll';
+import { trackButtonClick, trackVideoPlay } from '../../hooks/useAnalytics';
 
 export function Hero() {
   const { t } = useTranslation();
 
   return (
-    <section className="relative min-h-screen flex items-center justify-center px-4 sm:px-6 pt-32 sm:pt-36 md:pt-40 pb-10 overflow-hidden">
+    <section id="hero" className="relative min-h-screen flex items-center justify-center px-4 sm:px-6 pt-32 sm:pt-36 md:pt-40 pb-10 overflow-hidden">
       {/* DotGrid Background */}
       <div className="absolute inset-0 opacity-15">
         <DotGrid
@@ -41,7 +42,10 @@ export function Hero() {
         <AnimatedSection delay={250}>
           <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 mt-6 sm:mt-8 justify-center px-4">
             <button
-              onClick={scrollToBetaForm}
+              onClick={() => {
+                trackButtonClick('hero_beta');
+                scrollToBetaForm();
+              }}
               className="px-6 py-3 sm:px-8 sm:py-4 md:px-10 md:py-5 bg-brand-primary hover:bg-brand-primary-hover text-black text-base sm:text-lg font-bold rounded-xl transition-all transform hover:scale-105 shadow-xl shadow-brand-primary/30 w-full sm:w-auto"
             >
               {t('common.betaCTA')}
@@ -57,6 +61,7 @@ export function Hero() {
               controls
               loop
               playsInline
+              onPlay={() => trackVideoPlay('hero_demo')}
             >
               <source src="/mp4/ANYON%20demo%20video%204.mp4" type="video/mp4" />
               {t('hero.videoNotSupported', 'Your browser does not support the video tag.')}

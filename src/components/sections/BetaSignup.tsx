@@ -2,6 +2,7 @@ import { useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { AnimatedSection } from '../shared/AnimatedSection';
 import DotGrid from '../DotGrid';
+import { trackFormSubmit } from '../../hooks/useAnalytics';
 
 interface FormState {
   email: string;
@@ -45,6 +46,7 @@ export function BetaSignup() {
       if (!response.ok) throw new Error('Signup failed');
 
       setFormState({ email: '', status: 'success' });
+      trackFormSubmit('beta_signup');
 
       setTimeout(() => {
         setFormState(prev => ({ ...prev, status: 'idle' }));

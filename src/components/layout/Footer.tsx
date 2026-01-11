@@ -1,4 +1,5 @@
 import { useTranslation } from 'react-i18next';
+import { trackNavClick } from '../../hooks/useAnalytics';
 
 export function Footer() {
   const { t } = useTranslation();
@@ -25,22 +26,22 @@ export function Footer() {
             <h3 className="font-semibold text-foreground mb-4">{t('footer.sections.product.title')}</h3>
             <ul className="space-y-3">
               <li>
-                <a href="#features" className="text-sm text-muted hover:text-brand-primary transition-colors">
+                <a href="#features" onClick={() => trackNavClick('footer_features')} className="text-sm text-muted hover:text-brand-primary transition-colors">
                   {t('footer.sections.product.links.features')}
                 </a>
               </li>
               <li>
-                <a href="#comparison" className="text-sm text-muted hover:text-brand-primary transition-colors">
+                <a href="#comparison" onClick={() => trackNavClick('footer_comparison')} className="text-sm text-muted hover:text-brand-primary transition-colors">
                   {t('footer.sections.product.links.comparison')}
                 </a>
               </li>
               <li>
-                <a href="#workflow" className="text-sm text-muted hover:text-brand-primary transition-colors">
+                <a href="#workflow" onClick={() => trackNavClick('footer_workflow')} className="text-sm text-muted hover:text-brand-primary transition-colors">
                   {t('footer.sections.product.links.workflow')}
                 </a>
               </li>
               <li>
-                <a href="#pricing" className="text-sm text-muted hover:text-brand-primary transition-colors">
+                <a href="#pricing" onClick={() => trackNavClick('footer_pricing')} className="text-sm text-muted hover:text-brand-primary transition-colors">
                   {t('footer.sections.product.links.pricing')}
                 </a>
               </li>
@@ -52,22 +53,22 @@ export function Footer() {
             <h3 className="font-semibold text-foreground mb-4">{t('footer.sections.resources.title')}</h3>
             <ul className="space-y-3">
               <li>
-                <a href="#faq" className="text-sm text-muted hover:text-brand-primary transition-colors">
+                <a href="#faq" onClick={() => trackNavClick('footer_faq')} className="text-sm text-muted hover:text-brand-primary transition-colors">
                   {t('footer.sections.resources.links.faq')}
                 </a>
               </li>
               <li>
-                <a href="#" className="text-sm text-muted hover:text-brand-primary transition-colors">
+                <a href="#" onClick={() => trackNavClick('footer_docs')} className="text-sm text-muted hover:text-brand-primary transition-colors">
                   {t('footer.sections.resources.links.docs')}
                 </a>
               </li>
               <li>
-                <a href="#" className="text-sm text-muted hover:text-brand-primary transition-colors">
+                <a href="#" onClick={() => trackNavClick('footer_blog')} className="text-sm text-muted hover:text-brand-primary transition-colors">
                   {t('footer.sections.resources.links.blog')}
                 </a>
               </li>
               <li>
-                <a href="#" className="text-sm text-muted hover:text-brand-primary transition-colors">
+                <a href="#" onClick={() => trackNavClick('footer_support')} className="text-sm text-muted hover:text-brand-primary transition-colors">
                   {t('footer.sections.resources.links.support')}
                 </a>
               </li>
