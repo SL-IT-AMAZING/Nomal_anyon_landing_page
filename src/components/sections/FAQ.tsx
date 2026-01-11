@@ -1,6 +1,7 @@
 import { useTranslation } from 'react-i18next';
 import { AnimatedSection } from '../shared/AnimatedSection';
 import { useState } from 'react';
+import { trackFaqToggle } from '../../hooks/useAnalytics';
 
 interface FAQItem {
   question: string;
@@ -14,7 +15,11 @@ function FAQAccordion({ question, answer, index }: FAQItem & { index: number }) 
     <AnimatedSection delay={index * 50}>
       <div className="border border-border rounded-xl overflow-hidden bg-surface hover:border-brand-primary/50 transition-all">
         <button
-          onClick={() => setIsOpen(!isOpen)}
+          onClick={() => {
+            const newIsOpen = !isOpen;
+            setIsOpen(newIsOpen);
+            trackFaqToggle(question, newIsOpen);
+          }}
           className="w-full px-4 py-4 sm:px-6 sm:py-5 text-left flex items-center justify-between gap-3 sm:gap-4 hover:bg-surface/50 transition-colors"
         >
           <span className="text-base sm:text-lg font-semibold text-foreground">{question}</span>

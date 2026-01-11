@@ -2,12 +2,13 @@ import { useTranslation } from 'react-i18next';
 import { AnimatedSection } from '../shared/AnimatedSection';
 import LiquidEther from '../LiquidEther';
 import { scrollToBetaForm } from '../../utils/scroll';
+import { trackButtonClick } from '../../hooks/useAnalytics';
 
 export function CTA() {
   const { t } = useTranslation();
 
   return (
-    <section className="py-20 sm:py-24 md:py-32 px-4 sm:px-6 bg-gradient-to-br from-brand-primary/20 via-brand-secondary/10 to-background relative overflow-hidden">
+    <section id="cta" className="py-20 sm:py-24 md:py-32 px-4 sm:px-6 bg-gradient-to-br from-brand-primary/20 via-brand-secondary/10 to-background relative overflow-hidden">
       {/* LiquidEther Background */}
       <div className="absolute inset-0 opacity-15">
         <LiquidEther
@@ -37,7 +38,10 @@ export function CTA() {
         <AnimatedSection delay={200}>
           <div className="flex justify-center">
             <button
-              onClick={scrollToBetaForm}
+              onClick={() => {
+                trackButtonClick('cta_beta');
+                scrollToBetaForm();
+              }}
               className="px-8 py-4 sm:px-10 sm:py-5 bg-brand-primary hover:bg-brand-primary-hover text-black font-bold text-base sm:text-lg rounded-xl transition-all transform hover:scale-105 shadow-xl shadow-brand-primary/30"
             >
               {t('common.betaCTA')}

@@ -10,8 +10,24 @@ import { Pricing } from './components/sections/Pricing';
 import { FAQ } from './components/sections/FAQ';
 import { BetaSignup } from './components/sections/BetaSignup';
 import { CTA } from './components/sections/CTA';
+import { useSectionTracking } from './hooks/useSectionTracking';
+
+const SECTION_IDS = [
+  'hero',
+  'features',
+  'comparison',
+  'use-cases',
+  'testimonials',
+  'workflow',
+  'pricing',
+  'faq',
+  'beta-signup',
+  'cta',
+];
 
 function App() {
+  useSectionTracking(SECTION_IDS);
+
   return (
     <div className="min-h-screen bg-background text-foreground">
       <Navigation />

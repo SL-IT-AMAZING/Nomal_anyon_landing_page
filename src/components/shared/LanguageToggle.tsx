@@ -1,4 +1,5 @@
 import { useTranslation } from 'react-i18next';
+import { trackLanguageChange } from '../../hooks/useAnalytics';
 
 export function LanguageToggle() {
   const { i18n } = useTranslation();
@@ -6,6 +7,7 @@ export function LanguageToggle() {
   const toggleLanguage = () => {
     const newLang = i18n.language === 'ko' ? 'en' : 'ko';
     i18n.changeLanguage(newLang);
+    trackLanguageChange(newLang);
   };
 
   return (

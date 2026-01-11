@@ -2,6 +2,7 @@ import { useTranslation } from 'react-i18next';
 import { AnimatedSection } from '../shared/AnimatedSection';
 import DotGrid from '../DotGrid';
 import { scrollToBetaForm } from '../../utils/scroll';
+import { trackPricingClick, trackOutboundClick } from '../../hooks/useAnalytics';
 
 interface PricingTier {
   name: string;
@@ -57,7 +58,10 @@ function PricingCard({ name, price, originalPrice, period, description, features
         </ul>
 
         <button
-          onClick={scrollToBetaForm}
+          onClick={() => {
+            trackPricingClick(name);
+            scrollToBetaForm();
+          }}
           className={`w-full py-3 sm:py-4 rounded-xl font-bold transition-all transform hover:scale-105 text-sm sm:text-base ${
             highlighted
               ? 'bg-brand-primary hover:bg-brand-primary-hover text-black shadow-xl shadow-brand-primary/30'
@@ -155,6 +159,7 @@ export function Pricing() {
                   href="https://any-on.dev/"
                   target="_blank"
                   rel="noopener noreferrer"
+                  onClick={() => trackOutboundClick('https://any-on.dev/')}
                   className="px-8 py-3 bg-brand-primary hover:bg-brand-primary-hover text-black font-semibold rounded-lg transition-colors inline-block text-center"
                 >
                   {t('pricing.enterprise.cta')}
